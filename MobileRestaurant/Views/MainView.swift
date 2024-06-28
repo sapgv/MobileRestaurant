@@ -15,6 +15,9 @@ struct MainView: View {
             MenuListView()
                 .tabItem { Label("Меню", systemImage: "menucard") }
             
+            OrdersListView()
+                .tabItem { Label("Заказы", systemImage: "fork.knife") }
+            
         }
         
     }

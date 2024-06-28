@@ -37,11 +37,11 @@ struct MenuListView: View {
                                         Text(product.name)
                                         
                                         Text(product.netto)
-                                            .foregroundColor(.gray)
+                                            .foregroundStyle(.secondary)
                                             .font(.caption)
                                         
                                         Text(product.description)
-                                            .foregroundColor(.gray)
+                                            .foregroundStyle(.secondary)
                                             .font(.caption)
                                     }
                                     
@@ -52,7 +52,7 @@ struct MenuListView: View {
                                         Text("\(product.price) р")
                                         
                                         Text("\(product.unit.title)")
-                                            .foregroundColor(.gray)
+                                            .foregroundStyle(.secondary)
                                             .font(.caption)
                                         
                                     }
@@ -73,12 +73,17 @@ struct MenuListView: View {
                 
             }
             .navigationTitle("Меню")
-            
+            .safeAreaInset(edge: .bottom) {
+                BottomOrderView(itemCount: 3, value: 1200)
+                    .padding()
+                
+                .background(.bar)
+            }
             
         }
         
-        
     }
+    
 }
 
 #Preview {

@@ -9,6 +9,8 @@ import Foundation
 
 final class MenuListModel: ObservableObject {
  
+    private(set) var order: Order = Order()
+    
     private(set) var list: [ProductCategory]
     
     init(list: [ProductCategory] = MenuListModel.createList()) {
