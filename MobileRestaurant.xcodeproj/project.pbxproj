@@ -31,6 +31,10 @@
 		10C56C332C2F43D1009A58B7 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C322C2F43D1009A58B7 /* OrderStatus.swift */; };
 		10C56C352C2F48A3009A58B7 /* OrderPayStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */; };
 		10C56C372C2F4932009A58B7 /* OrderListPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C362C2F4932009A58B7 /* OrderListPayView.swift */; };
+		10C56C3A2C2F4C94009A58B7 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C392C2F4C94009A58B7 /* AccountView.swift */; };
+		10C56C3C2C2F4CF3009A58B7 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C3B2C2F4CF3009A58B7 /* AccountViewModel.swift */; };
+		10C56C402C2F4EFA009A58B7 /* AccountOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C3F2C2F4EFA009A58B7 /* AccountOrderListView.swift */; };
+		10C56C422C2F5145009A58B7 /* OrderAccountStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		10C56C322C2F43D1009A58B7 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPayStatus.swift; sourceTree = "<group>"; };
 		10C56C362C2F4932009A58B7 /* OrderListPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListPayView.swift; sourceTree = "<group>"; };
+		10C56C392C2F4C94009A58B7 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		10C56C3B2C2F4CF3009A58B7 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		10C56C3F2C2F4EFA009A58B7 /* AccountOrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOrderListView.swift; sourceTree = "<group>"; };
+		10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAccountStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 				10C56C192C2F2B11009A58B7 /* OrderItem.swift */,
 				10C56C322C2F43D1009A58B7 /* OrderStatus.swift */,
 				10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */,
+				10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				10C56BF72C2F1882009A58B7 /* MainView.swift */,
+				10C56C382C2F4C7F009A58B7 /* AccountView */,
 				10C56C2B2C2F3584009A58B7 /* Product */,
 				10C56C242C2F344F009A58B7 /* Order */,
 				10C56C252C2F3456009A58B7 /* Menu */,
@@ -215,6 +225,16 @@
 			path = OrderItemListView;
 			sourceTree = "<group>";
 		};
+		10C56C382C2F4C7F009A58B7 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				10C56C3B2C2F4CF3009A58B7 /* AccountViewModel.swift */,
+				10C56C392C2F4C94009A58B7 /* AccountView.swift */,
+				10C56C3F2C2F4EFA009A58B7 /* AccountOrderListView.swift */,
+			);
+			path = AccountView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,11 +313,15 @@
 				10C56BF82C2F1882009A58B7 /* MainView.swift in Sources */,
 				10C56C2E2C2F359A009A58B7 /* ProductListView.swift in Sources */,
 				10C56C182C2F2AC5009A58B7 /* Order.swift in Sources */,
+				10C56C402C2F4EFA009A58B7 /* AccountOrderListView.swift in Sources */,
+				10C56C3A2C2F4C94009A58B7 /* AccountView.swift in Sources */,
 				10C56C332C2F43D1009A58B7 /* OrderStatus.swift in Sources */,
+				10C56C3C2C2F4CF3009A58B7 /* AccountViewModel.swift in Sources */,
 				10C56C1A2C2F2B11009A58B7 /* OrderItem.swift in Sources */,
 				10C56C0D2C2F1DAE009A58B7 /* MenuListModel.swift in Sources */,
 				10C56C312C2F3F3E009A58B7 /* OrderItemListView.swift in Sources */,
 				10C56C1C2C2F2B8E009A58B7 /* OrdersListView.swift in Sources */,
+				10C56C422C2F5145009A58B7 /* OrderAccountStatus.swift in Sources */,
 				10C56C112C2F2179009A58B7 /* Menu.swift in Sources */,
 				10C56C0F2C2F1E6A009A58B7 /* Coordinator.swift in Sources */,
 				10C56C352C2F48A3009A58B7 /* OrderPayStatus.swift in Sources */,

@@ -18,6 +18,9 @@ struct MainView: View {
             OrdersListView()
                 .tabItem { Label("Заказы", systemImage: "fork.knife") }
             
+            AccountView()
+                .tabItem { Label("Бухгалтер", systemImage: "tray.full") }
+            
         }
         
     }
