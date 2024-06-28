@@ -32,7 +32,18 @@ struct OrdersListView: View {
                     } header: {
                         
                         HStack {
-                            Text("Заказ")
+                            HStack() {
+                                Text("Заказ")
+                                Text(order.status.rawValue)
+                                    .font(.caption)
+                                    .padding(4)
+                                    .background {
+                                        Color(uiColor: order.status.color)
+                                    }
+                                    .foregroundStyle(Color.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 3))
+                                
+                            }
                             Spacer()
                             Text(order.date.formatted(date: .abbreviated, time: .omitted))
                         }

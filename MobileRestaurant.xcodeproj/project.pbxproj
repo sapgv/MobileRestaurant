@@ -28,6 +28,7 @@
 		10C56C2A2C2F34C1009A58B7 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C292C2F34C1009A58B7 /* OrderViewModel.swift */; };
 		10C56C2E2C2F359A009A58B7 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C2D2C2F359A009A58B7 /* ProductListView.swift */; };
 		10C56C312C2F3F3E009A58B7 /* OrderItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C302C2F3F3E009A58B7 /* OrderItemListView.swift */; };
+		10C56C332C2F43D1009A58B7 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C322C2F43D1009A58B7 /* OrderStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		10C56C292C2F34C1009A58B7 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		10C56C2D2C2F359A009A58B7 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		10C56C302C2F3F3E009A58B7 /* OrderItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemListView.swift; sourceTree = "<group>"; };
+		10C56C322C2F43D1009A58B7 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				10C56C102C2F2179009A58B7 /* Menu.swift */,
 				10C56C172C2F2AC5009A58B7 /* Order.swift */,
 				10C56C192C2F2B11009A58B7 /* OrderItem.swift */,
+				10C56C322C2F43D1009A58B7 /* OrderStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				10C56BF82C2F1882009A58B7 /* MainView.swift in Sources */,
 				10C56C2E2C2F359A009A58B7 /* ProductListView.swift in Sources */,
 				10C56C182C2F2AC5009A58B7 /* Order.swift in Sources */,
+				10C56C332C2F43D1009A58B7 /* OrderStatus.swift in Sources */,
 				10C56C1A2C2F2B11009A58B7 /* OrderItem.swift in Sources */,
 				10C56C0D2C2F1DAE009A58B7 /* MenuListModel.swift in Sources */,
 				10C56C312C2F3F3E009A58B7 /* OrderItemListView.swift in Sources */,

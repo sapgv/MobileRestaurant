@@ -9,9 +9,11 @@ import Foundation
 
 final class Order {
  
+    let id: UUID
+    
     let date: Date
     
-    let id: UUID
+    private(set) var status: OrderStatus
     
     var value: Decimal {
         self.items.reduce(0, { $0 + $1.value })
@@ -22,10 +24,12 @@ final class Order {
     init(
         id: UUID = UUID(),
         date: Date = Date(),
+        status: OrderStatus = .new,
         items: [OrderItem] = []
     ) {
         self.id = id
         self.date = date
+        self.status = status
         self.items = items
     }
     
