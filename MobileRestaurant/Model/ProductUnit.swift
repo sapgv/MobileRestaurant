@@ -22,4 +22,13 @@ enum ProductUnit: Hashable {
         }
     }
     
+    func value(count: Int) -> String {
+        switch self {
+        case .item:
+            return "\(count) шт"
+        case let .wight(value):
+            return "\(value * Decimal(count)) г"
+        }
+    }
+    
 }

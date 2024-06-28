@@ -46,3 +46,13 @@ final class Product: Hashable {
     }
     
 }
+
+extension Product {
+    
+    static var preview: Product {
+        
+        Product(name: "Сет 2", price: 3550, image: "7", netto: "300/80/100/65/100г", description: "Императорские устрицы, креветки подкопченные магаданские и тигровые, сашими лосось, сашими тунец, тар-тар из гребешка, лимон")
+        
+    }
+    
+}

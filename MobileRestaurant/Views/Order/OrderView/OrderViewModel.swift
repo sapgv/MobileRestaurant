@@ -1,5 +1,5 @@
 //
-//  MenuListModel.swift
+//  OrderViewModel.swift
 //  MobileRestaurant
 //
 //  Created by Grigory Sapogov on 28.06.2024.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class MenuListModel: ObservableObject {
- 
-    private(set) var order: Order = Order()
+final class OrderViewModel: ObservableObject {
+    
+    @Published private(set) var order: Order = Order()
     
     private(set) var list: [ProductCategory]
     
@@ -17,5 +17,9 @@ final class MenuListModel: ObservableObject {
         self.list = list
     }
     
+    func add(product: Product) {
+        self.order.add(product: product)
+        self.objectWillChange.send()
+    }
+    
 }
-

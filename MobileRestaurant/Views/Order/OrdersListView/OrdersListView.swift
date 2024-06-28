@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrdersListView: View {
     
-    @StateObject private var model = OrdersListModel()
+    @StateObject var model = OrdersListModel()
     
     @State private var showMenu: Bool = false
     
@@ -23,49 +23,20 @@ struct OrdersListView: View {
                     
                     Section {
                         
-                        ForEach(order.items, id: \.product.name) { item in
+                        ForEach(order.items, id: \.product) { item in
                             
-                            HStack(alignment: .center) {
-                                
-                                Image(item.product.image)
-                                    .resizable()
-                                    .frame(width: 44, height: 44)
-                                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
-
-                                VStack(alignment: .leading, spacing: 8) {
-                                    
-                                    Text(item.product.name)
-                                    
-                                    Text(item.product.netto)
-                                        .foregroundStyle(.secondary)
-                                        .font(.caption)
-                                    
-                                    Text(item.product.description)
-                                        .foregroundStyle(.secondary)
-                                        .font(.caption)
-                                }
-                                
-                                Spacer()
-                                
-                                VStack(spacing: 8) {
-                                    
-                                    Text("\(item.product.price) р")
-                                    
-                                    Text("\(item.product.unit.title)")
-                                        .foregroundStyle(.secondary)
-                                        .font(.caption)
-                                    
-                                }
-                                
-                            }
+                            OrderItemListView(orderItem: item)
                             
                         }
                         
                     } header: {
                         
-                        Text(order.date.formatted(date: .abbreviated, time: .omitted))
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                        HStack {
+                            Text("Заказ")
+                            Spacer()
+                            Text(order.date.formatted(date: .abbreviated, time: .omitted))
+                        }
+                        
                     }
                     .headerProminence(.increased)
                     
@@ -78,16 +49,17 @@ struct OrdersListView: View {
                     Button(action: {
                         self.showMenu = true
                     }) {
-                        Image(systemName: "plus.circle.fill")
-                            .padding(.horizontal)
+                        Text("Новый заказ")
                     }
+                    .tint(.blue)
+                    .buttonStyle(.borderedProminent)
                 }
             })
             .navigationTitle("Мои Заказы")
             .sheet(isPresented: $showMenu, content: {
-        
-                MenuListView()
-                
+                OrderView { order in
+                    self.model.add(order: order)
+                }
             })
             
         }
@@ -97,5 +69,13 @@ struct OrdersListView: View {
 }
 
 #Preview {
-    OrdersListView()
+    
+    let item = OrderItem(product: Product.preview, count: 3)
+    
+    let order = Order(items: [item])
+    
+    let model = OrdersListModel(orders: [order])
+    
+    return OrdersListView(model: model)
+    
 }

@@ -25,39 +25,7 @@ struct MenuListView: View {
                             
                             NavigationLink(value: Coordinator.MenuList.product(product)) {
                                 
-                                HStack(alignment: .center) {
-                                    
-                                    Image(product.image)
-                                        .resizable()
-                                        .frame(width: 44, height: 44)
-                                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 10)))
-
-                                    VStack(alignment: .leading, spacing: 8) {
-                                        
-                                        Text(product.name)
-                                        
-                                        Text(product.netto)
-                                            .foregroundStyle(.secondary)
-                                            .font(.caption)
-                                        
-                                        Text(product.description)
-                                            .foregroundStyle(.secondary)
-                                            .font(.caption)
-                                    }
-                                    
-                                    Spacer()
-                                    
-                                    VStack(spacing: 8) {
-                                        
-                                        Text("\(product.price) р")
-                                        
-                                        Text("\(product.unit.title)")
-                                            .foregroundStyle(.secondary)
-                                            .font(.caption)
-                                        
-                                    }
-                                    
-                                }
+                                ProductListView(product: product)
                                 
                             }
                             
@@ -73,12 +41,6 @@ struct MenuListView: View {
                 
             }
             .navigationTitle("Меню")
-            .safeAreaInset(edge: .bottom) {
-                BottomOrderView(itemCount: 3, value: 1200)
-                    .padding()
-                
-                .background(.bar)
-            }
             
         }
         

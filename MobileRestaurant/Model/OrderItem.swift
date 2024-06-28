@@ -13,6 +13,14 @@ final class OrderItem {
     
     var count: Int = 1
     
+    var value: Decimal {
+        self.product.price * Decimal(self.count)
+    }
+    
+    var unit: String {
+        self.product.unit.value(count: self.count)
+    }
+    
     init(
         product: Product,
         count: Int

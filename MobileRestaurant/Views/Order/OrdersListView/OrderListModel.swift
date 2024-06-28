@@ -9,6 +9,14 @@ import Foundation
 
 final class OrdersListModel: ObservableObject {
  
-    @Published private(set) var orders: [Order] = []
+    @Published private(set) var orders: [Order]
+    
+    init(orders: [Order] = []) {
+        self.orders = orders
+    }
+    
+    func add(order: Order) {
+        self.orders.append(order)
+    }
     
 }

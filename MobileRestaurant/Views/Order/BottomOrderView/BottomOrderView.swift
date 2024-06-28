@@ -13,6 +13,8 @@ struct BottomOrderView: View {
     
     var value: Decimal
     
+    var action: (() -> Void)? = nil
+    
     var body: some View {
         
         HStack(alignment: .center) {
@@ -22,12 +24,12 @@ struct BottomOrderView: View {
             Spacer()
             
             Text("\(value) р")
-                .font(.title)
+                .font(.title2)
 
             Spacer()
             
             Button {
-                
+                action?()
             } label: {
                 Text("Сделать заказ")
             }
