@@ -29,6 +29,8 @@
 		10C56C2E2C2F359A009A58B7 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C2D2C2F359A009A58B7 /* ProductListView.swift */; };
 		10C56C312C2F3F3E009A58B7 /* OrderItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C302C2F3F3E009A58B7 /* OrderItemListView.swift */; };
 		10C56C332C2F43D1009A58B7 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C322C2F43D1009A58B7 /* OrderStatus.swift */; };
+		10C56C352C2F48A3009A58B7 /* OrderPayStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */; };
+		10C56C372C2F4932009A58B7 /* OrderListPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C362C2F4932009A58B7 /* OrderListPayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		10C56C2D2C2F359A009A58B7 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		10C56C302C2F3F3E009A58B7 /* OrderItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemListView.swift; sourceTree = "<group>"; };
 		10C56C322C2F43D1009A58B7 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPayStatus.swift; sourceTree = "<group>"; };
+		10C56C362C2F4932009A58B7 /* OrderListPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListPayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				10C56C172C2F2AC5009A58B7 /* Order.swift */,
 				10C56C192C2F2B11009A58B7 /* OrderItem.swift */,
 				10C56C322C2F43D1009A58B7 /* OrderStatus.swift */,
+				10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				10C56C1D2C2F2B9D009A58B7 /* OrderListModel.swift */,
 				10C56C1B2C2F2B8E009A58B7 /* OrdersListView.swift */,
+				10C56C362C2F4932009A58B7 /* OrderListPayView.swift */,
 			);
 			path = OrdersListView;
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 				10C56C1C2C2F2B8E009A58B7 /* OrdersListView.swift in Sources */,
 				10C56C112C2F2179009A58B7 /* Menu.swift in Sources */,
 				10C56C0F2C2F1E6A009A58B7 /* Coordinator.swift in Sources */,
+				10C56C352C2F48A3009A58B7 /* OrderPayStatus.swift in Sources */,
+				10C56C372C2F4932009A58B7 /* OrderListPayView.swift in Sources */,
 				10C56C0A2C2F1D80009A58B7 /* MenuListView.swift in Sources */,
 				10C56BF62C2F1882009A58B7 /* MobileRestaurantApp.swift in Sources */,
 				10C56C052C2F1C9E009A58B7 /* Product.swift in Sources */,

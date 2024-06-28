@@ -29,6 +29,8 @@ struct OrdersListView: View {
                             
                         }
                         
+                        OrderListPayView(order: order)
+                        
                     } header: {
                         
                         HStack {
@@ -81,11 +83,7 @@ struct OrdersListView: View {
 
 #Preview {
     
-    let item = OrderItem(product: Product.preview, count: 3)
-    
-    let order = Order(items: [item])
-    
-    let model = OrdersListModel(orders: [order])
+    let model = OrdersListModel(orders: [Order.preview])
     
     return OrdersListView(model: model)
     
