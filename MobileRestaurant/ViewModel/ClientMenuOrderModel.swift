@@ -19,14 +19,18 @@ final class ClientMenuOrderModel: ObservableObject {
     
     @Published private(set) var items: [OrderItem] = []
     
+    @Published var orderType: OrderType
+    
     var value: Decimal {
         self.items.reduce(0, { $0 + $1.value })
     }
     
     init(
+        orderType: OrderType = .restaurant,
         desk: Desk? = Storage.shared.desk,
         list: [ProductCategory] = ProductCategory.createList()
     ) {
+        self.orderType = orderType
         self.desk = desk
         self.list = list
     }

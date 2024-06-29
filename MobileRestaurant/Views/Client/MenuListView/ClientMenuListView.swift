@@ -23,25 +23,45 @@ struct ClientMenuListView: View {
                 
                 List {
                     
+                    
                     Section {
                         
-                        Button(action: {
+                        VStack() {
                             
-                            showSelectDesk = true
+                            Picker("Заказ", selection: $model.orderType) {
                             
-                        }, label: {
-                            if let desk = model.desk {
-                                
-                                HStack {
-                                    DeskCircleView(name: desk.name)
-                                    Text("\(desk.places) мест")
+                                ForEach(OrderType.allCases, id: \.self) { orderType in
+                                    Text(orderType.rawValue).tag(orderType)
                                 }
                                 
                             }
-                            else {
-                                Text("Выбрать стол")
+                            .pickerStyle(.segmented)
+                            .padding(4)
+                            
+                            if model.orderType == .restaurant {
+                                
+                                Button(action: {
+                                    
+                                    showSelectDesk = true
+                                    
+                                }, label: {
+                                    if let desk = model.desk {
+                                        
+                                        HStack {
+                                            Text("Стол \(desk.name)")
+                                            Spacer()
+                                        }
+                                        
+                                    }
+                                    else {
+                                        Text("Выбрать стол")
+                                    }
+                                })
+                                .padding(4)
+                                
                             }
-                        })
+                            
+                        }
                         
                     }
                     
