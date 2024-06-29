@@ -22,8 +22,8 @@ struct MainView: View {
             ClientOrderListView()
                 .tabItem { Label("Заказы", systemImage: "fork.knife") }
             
-            AccountView()
-                .tabItem { Label("Бухгалтер", systemImage: "tray.full") }
+            ShiftListView(model: ShiftListViewModel())
+                .tabItem { Label("Смены", systemImage: "person.badge.clock") }
             
         }
         

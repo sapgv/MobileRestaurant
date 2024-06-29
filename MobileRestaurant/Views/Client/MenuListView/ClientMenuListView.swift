@@ -15,6 +15,8 @@ struct ClientMenuListView: View {
     
     @State private var showCreateOrder = false
     
+    @EnvironmentObject private var currentShiftModel: CurrentShiftModel
+    
     var body: some View {
         
         NavigationStack {
@@ -27,6 +29,11 @@ struct ClientMenuListView: View {
                         
                         VStack() {
                             
+                            HStack {
+                                Text("ЗАКАЗ")
+                                Spacer()
+                            }
+                            
                             Picker("Заказ", selection: $model.orderType) {
                             
                                 ForEach(OrderType.allCases, id: \.self) { orderType in
@@ -35,37 +42,37 @@ struct ClientMenuListView: View {
                                 
                             }
                             .pickerStyle(.segmented)
-                            .padding(4)
                             
                             if model.orderType == .restaurant {
                                 
-                                Button(action: {
+                                HStack {
                                     
-                                    showSelectDesk = true
-                                    
-                                }, label: {
                                     if let desk = model.desk {
-                                        
-                                        HStack {
-                                            Text("Стол \(desk.name)")
-                                            Spacer()
-                                        }
-                                        
+                                        Text(desk.name)
                                     }
-                                    else {
+                                    
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        showSelectDesk = true
+                                    }, label: {
                                         Text("Выбрать стол")
-                                    }
-                                })
+                                    })
+                                    
+                                    
+                                }
                                 .padding(4)
-                                
                             }
                             
                         }
                         
-                    }
-                    
-                    ForEach(model.list, id: \.name) { category in
+                    } header: {
                         
+                    }
+                    .headerProminence(.increased)
+
+                    ForEach(model.list, id: \.name) { category in
+
                         Section {
                             
                             ForEach(category.products, id: \.name) { product in

@@ -13,6 +13,8 @@ struct DeskListView: View {
     
     @StateObject var deskListModel = DeskListModel()
     
+    @EnvironmentObject var currentShiftModel: CurrentShiftModel
+    
     @Binding var selectedDesk: Desk?
     
     var body: some View {
@@ -21,19 +23,42 @@ struct DeskListView: View {
          
             List {
                 
-                
-                
                 ForEach(deskListModel.list, id: \.name) { desk in
                     
                     HStack {
                         
-                        DeskCircleView(name: desk.name)
-                        
-//                        Spacer()
-                        
-                        Text("\(desk.places) мест")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                        VStack {
+                            
+                            HStack {
+                                
+                                LabeledContent(desk.name, value: "\(desk.places) мест")
+                                
+                            }
+                            
+                            if let waiter = currentShiftModel.currentShift.data[desk] {
+                                
+                                HStack {
+                                    
+                                    Image(waiter.image)
+                                        .resizable()
+                                        .frame(width: 44, height: 44)
+                                        .clipShape(Circle())
+                                    
+                                    VStack(alignment: .leading) {
+                                        
+                                        Text(waiter.name)
+                                        Text("Официант")
+                                            .foregroundStyle(.secondary)
+                                        
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                }
+                                
+                            }
+                            
+                        }
                         
                         Spacer()
                         
@@ -66,4 +91,5 @@ struct DeskListView: View {
 
 #Preview {
     DeskListView(selectedDesk: .constant(nil))
+        .environmentObject(CurrentShiftModel())
 }

@@ -8,11 +8,12 @@
 import Foundation
 
 final class DeskListModel: ObservableObject {
- 
+    
     @Published private(set) var list: [Desk]
     
-    init(list: [Desk] = Desk.arrayPreview) {
+    init(list: [Desk] = Storage.shared.desks) {
         self.list = list
     }
+    
     
 }

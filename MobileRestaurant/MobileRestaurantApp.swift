@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct MobileRestaurantApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @StateObject private var currentShiftModel = CurrentShiftModel()
+    
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(currentShiftModel)
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Waiter {
+final class Waiter: Codable {
     
     let name: String
     
@@ -25,7 +25,7 @@ final class Waiter {
 
 extension Waiter {
     
-    static var previewList: [Waiter] {
+    static var arrayPreview: [Waiter] {
         [
             Waiter(name: "Екатерина", image: "w1"),
             Waiter(name: "Олеся", image: "w2"),
