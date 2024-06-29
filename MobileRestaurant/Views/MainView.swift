@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @StateObject private var orderModel: OrderModel = OrderModel()
+    
     var body: some View {
         
         TabView {
             
             MenuListView()
                 .tabItem { Label("Меню", systemImage: "menucard") }
+                .environmentObject(orderModel)
             
             OrdersListView()
                 .tabItem { Label("Заказы", systemImage: "fork.knife") }

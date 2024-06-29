@@ -35,6 +35,9 @@
 		10C56C3C2C2F4CF3009A58B7 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C3B2C2F4CF3009A58B7 /* AccountViewModel.swift */; };
 		10C56C402C2F4EFA009A58B7 /* AccountOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C3F2C2F4EFA009A58B7 /* AccountOrderListView.swift */; };
 		10C56C422C2F5145009A58B7 /* OrderAccountStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */; };
+		10D82D952C2FCFC900A989CB /* Waiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D942C2FCFC900A989CB /* Waiter.swift */; };
+		10D82D982C2FD36800A989CB /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D972C2FD36800A989CB /* OrderModel.swift */; };
+		10D82D9A2C2FD3C700A989CB /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D992C2FD3C700A989CB /* MenuModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		10C56C3B2C2F4CF3009A58B7 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		10C56C3F2C2F4EFA009A58B7 /* AccountOrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOrderListView.swift; sourceTree = "<group>"; };
 		10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAccountStatus.swift; sourceTree = "<group>"; };
+		10D82D942C2FCFC900A989CB /* Waiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waiter.swift; sourceTree = "<group>"; };
+		10D82D972C2FD36800A989CB /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		10D82D992C2FD3C700A989CB /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 			children = (
 				10C56BF52C2F1882009A58B7 /* MobileRestaurantApp.swift */,
 				10C56C0E2C2F1E6A009A58B7 /* Coordinator.swift */,
+				10D82D962C2FD22300A989CB /* ViewModel */,
 				10C56C082C2F1D3F009A58B7 /* Views */,
 				10C56C032C2F1C83009A58B7 /* Model */,
 				10C56BF92C2F1884009A58B7 /* Assets.xcassets */,
@@ -129,6 +136,7 @@
 				10C56C322C2F43D1009A58B7 /* OrderStatus.swift */,
 				10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */,
 				10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */,
+				10D82D942C2FCFC900A989CB /* Waiter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +243,15 @@
 			path = AccountView;
 			sourceTree = "<group>";
 		};
+		10D82D962C2FD22300A989CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				10D82D972C2FD36800A989CB /* OrderModel.swift */,
+				10D82D992C2FD3C700A989CB /* MenuModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,7 +332,9 @@
 				10C56C182C2F2AC5009A58B7 /* Order.swift in Sources */,
 				10C56C402C2F4EFA009A58B7 /* AccountOrderListView.swift in Sources */,
 				10C56C3A2C2F4C94009A58B7 /* AccountView.swift in Sources */,
+				10D82D952C2FCFC900A989CB /* Waiter.swift in Sources */,
 				10C56C332C2F43D1009A58B7 /* OrderStatus.swift in Sources */,
+				10D82D9A2C2FD3C700A989CB /* MenuModel.swift in Sources */,
 				10C56C3C2C2F4CF3009A58B7 /* AccountViewModel.swift in Sources */,
 				10C56C1A2C2F2B11009A58B7 /* OrderItem.swift in Sources */,
 				10C56C0D2C2F1DAE009A58B7 /* MenuListModel.swift in Sources */,
@@ -328,6 +347,7 @@
 				10C56C372C2F4932009A58B7 /* OrderListPayView.swift in Sources */,
 				10C56C0A2C2F1D80009A58B7 /* MenuListView.swift in Sources */,
 				10C56BF62C2F1882009A58B7 /* MobileRestaurantApp.swift in Sources */,
+				10D82D982C2FD36800A989CB /* OrderModel.swift in Sources */,
 				10C56C052C2F1C9E009A58B7 /* Product.swift in Sources */,
 				10C56C132C2F219A009A58B7 /* ProductCategory.swift in Sources */,
 				10C56C2A2C2F34C1009A58B7 /* OrderViewModel.swift in Sources */,

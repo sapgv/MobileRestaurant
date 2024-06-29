@@ -17,26 +17,33 @@ struct BottomOrderView: View {
     
     var body: some View {
         
-        HStack(alignment: .center) {
+        Button(action: {
             
-            Text("\(itemCount) позиции(й), на сумму ")
+            action?()
             
-            Spacer()
+        }, label: {
             
-            Text("\(value) р")
-                .font(.title2)
-
-            Spacer()
-            
-            Button {
-                action?()
-            } label: {
-                Text("Сделать заказ")
+            HStack(alignment: .center) {
+                
+                Text("Корзина")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color(uiColor: .white.withAlphaComponent(0.5)))
+                
+                Spacer()
+                
+                Text("\(value) р")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.white)
+                
             }
-            .tint(.green)
-            .buttonStyle(.borderedProminent)
+            .padding(6)
+            .background {
+                Color.green
+            }
             
-        }
+        })
         
     }
 }

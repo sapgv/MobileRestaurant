@@ -7,19 +7,23 @@
 
 import Foundation
 
-final class OrderViewModel: ObservableObject {
-    
-    @Published private(set) var order: Order = Order()
-    
-    private(set) var list: [ProductCategory]
-    
-    init(list: [ProductCategory] = ProductCategory.createList()) {
-        self.list = list
-    }
-    
-    func add(product: Product) {
-        self.order.add(product: product)
-        self.objectWillChange.send()
-    }
-    
-}
+//final class OrderViewModel: ObservableObject {
+//    
+//    @Published private(set) var order: Order
+//    
+//    private(set) var list: [ProductCategory]
+//    
+//    init(
+//        order: Order = Order(),
+//        list: [ProductCategory] = ProductCategory.createList()
+//    ) {
+//        self.order = order
+//        self.list = list
+//    }
+//    
+//    func add(product: Product) {
+//        self.order.add(product: product)
+//        self.objectWillChange.send()
+//    }
+//    
+//}

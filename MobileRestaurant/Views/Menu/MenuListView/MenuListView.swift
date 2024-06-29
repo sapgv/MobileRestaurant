@@ -9,35 +9,60 @@ import SwiftUI
 
 struct MenuListView: View {
     
-    @StateObject private var model = MenuListModel()
+    @StateObject private var model = MenuModel()
+    
+    @EnvironmentObject var orderModel: OrderModel
     
     var body: some View {
         
         NavigationStack {
             
-            List {
+            VStack(spacing: 0) {
                 
-                ForEach(model.list, id: \.name) { category in
+                List {
                     
-                    Section {
+                    ForEach(model.list, id: \.name) { category in
                         
-                        ForEach(category.products, id: \.name) { product in
+                        Section {
                             
-                            NavigationLink(value: Coordinator.MenuList.product(product)) {
+                            ForEach(category.products, id: \.name) { product in
                                 
-                                ProductListView(product: product)
+                                NavigationLink(value: Coordinator.MenuList.product(product)) {
+                                    
+                                    ProductListView(product: product)
+                                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                            Button {
+                                                self.orderModel.add(product: product)
+                                                
+                                            } label: {
+                                                Text("Добавить")
+                                            }
+                                            .tint(.green)
+                                        }
+                                }
                                 
                             }
                             
+                        } header: {
+                            Text(category.name)
                         }
+                        .headerProminence(.increased)
                         
-                    } header: {
-                        Text(category.name)
                     }
-                    .headerProminence(.increased)
+                    
                     
                 }
                 
+                if !self.orderModel.order.items.isEmpty {
+                
+                    BottomOrderView(
+                        itemCount: self.orderModel.order.items.count,
+                        value: self.orderModel.order.value,
+                        action: {
+                        }
+                    )
+                    
+                }
                 
             }
             .navigationTitle("Меню")
@@ -50,4 +75,5 @@ struct MenuListView: View {
 
 #Preview {
     MenuListView()
+        .environmentObject(OrderModel(order: Order.preview))
 }

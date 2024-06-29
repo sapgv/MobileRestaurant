@@ -11,7 +11,9 @@ struct OrderView: View {
 
     @Environment(\.dismiss) var dismiss
     
-    @StateObject private var model = OrderViewModel()
+    @EnvironmentObject var orderModel: OrderModel
+    
+    @StateObject var menuModel: MenuModel = MenuModel()
     
     var completeOrder: ((Order) -> Void)? = nil
     
@@ -19,55 +21,53 @@ struct OrderView: View {
        
         NavigationStack {
             
-            List {
+            VStack(spacing: 0) {
                 
-                ForEach(model.list, id: \.name) { category in
+                List {
                     
-                    Section {
+                    ForEach(menuModel.list, id: \.name) { category in
                         
-                        ForEach(category.products, id: \.name) { product in
+                        Section {
                             
-                            NavigationLink(value: Coordinator.MenuList.product(product)) {
+                            ForEach(category.products, id: \.name) { product in
                                 
-                                ProductListView(product: product)
-                                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                        Button {
-                                            self.model.add(product: product)
-                                            
-                                        } label: {
-                                            Text("Добавить")
+                                NavigationLink(value: Coordinator.MenuList.product(product)) {
+                                    
+                                    ProductListView(product: product)
+                                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                            Button {
+                                                self.orderModel.add(product: product)
+                                                
+                                            } label: {
+                                                Text("Добавить")
+                                            }
+                                            .tint(.green)
                                         }
-                                        .tint(.green)
-                                    }
+                                }
+                                
+                                
                             }
                             
-                            
+                        } header: {
+                            Text(category.name)
                         }
+                        .headerProminence(.increased)
                         
-                    } header: {
-                        Text(category.name)
                     }
-                    .headerProminence(.increased)
                     
                 }
-                
+
+                BottomOrderView(
+                    itemCount: self.orderModel.order.items.count,
+                    value: self.orderModel.order.value,
+                    action: {
+                        completeOrder?(self.orderModel.order)
+                        dismiss()
+                    }
+                )
                 
             }
             .navigationTitle("Новый заказ")
-            .safeAreaInset(edge: .bottom) {
-                if !self.model.order.items.isEmpty {
-                    BottomOrderView(
-                        itemCount: self.model.order.items.count,
-                        value: self.model.order.value,
-                        action: {
-                            completeOrder?(self.model.order)
-                            dismiss()
-                        }
-                    )
-                    .padding()
-                    .background(.bar)
-                }
-            }
             
         }
         
@@ -75,5 +75,6 @@ struct OrderView: View {
 }
 
 #Preview {
-    OrderView()
+    return OrderView()
+        .environmentObject(OrderModel(order: Order.preview))
 }
