@@ -28,6 +28,8 @@ struct MainView: View {
             ShiftListView(model: ShiftListViewModel())
                 .tabItem { Label("Смены", systemImage: "person.badge.clock") }
             
+            AdminDeskListView()
+                .tabItem { Label("Админ", systemImage: "person") }
             
             
         }

@@ -71,6 +71,8 @@
 		10D82DFC2C30401A00A989CB /* WaiterOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DFB2C30401A00A989CB /* WaiterOrderDetailView.swift */; };
 		10D82DFE2C30403D00A989CB /* WaiterOrderDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DFD2C30403D00A989CB /* WaiterOrderDetailModel.swift */; };
 		10D82E012C30424600A989CB /* OrderStatusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82E002C30424600A989CB /* OrderStatusListView.swift */; };
+		10D82E042C304A4D00A989CB /* AdminDeskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82E032C304A4D00A989CB /* AdminDeskListView.swift */; };
+		10D82E062C304AD300A989CB /* AdminDeskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82E052C304AD300A989CB /* AdminDeskListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +141,8 @@
 		10D82DFB2C30401A00A989CB /* WaiterOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterOrderDetailView.swift; sourceTree = "<group>"; };
 		10D82DFD2C30403D00A989CB /* WaiterOrderDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterOrderDetailModel.swift; sourceTree = "<group>"; };
 		10D82E002C30424600A989CB /* OrderStatusListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusListView.swift; sourceTree = "<group>"; };
+		10D82E032C304A4D00A989CB /* AdminDeskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDeskListView.swift; sourceTree = "<group>"; };
+		10D82E052C304AD300A989CB /* AdminDeskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDeskListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 		10C56C082C2F1D3F009A58B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10D82E022C304A3900A989CB /* AdminDeskListView */,
 				10D82DFF2C30423500A989CB /* OrderStatusListView */,
 				10D82DDB2C301EFE00A989CB /* Shift */,
 				10D82DBB2C2FFD0B00A989CB /* CommonView */,
@@ -487,6 +492,15 @@
 			path = OrderStatusListView;
 			sourceTree = "<group>";
 		};
+		10D82E022C304A3900A989CB /* AdminDeskListView */ = {
+			isa = PBXGroup;
+			children = (
+				10D82E052C304AD300A989CB /* AdminDeskListModel.swift */,
+				10D82E032C304A4D00A989CB /* AdminDeskListView.swift */,
+			);
+			path = AdminDeskListView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -598,6 +612,7 @@
 				10D82DF02C3037FE00A989CB /* WaiterDetailView.swift in Sources */,
 				10D82DB32C2FF20200A989CB /* NextButtonView.swift in Sources */,
 				10C56C112C2F2179009A58B7 /* Menu.swift in Sources */,
+				10D82E062C304AD300A989CB /* AdminDeskListModel.swift in Sources */,
 				10D82DB72C2FF6DB00A989CB /* BottomActionView.swift in Sources */,
 				10C56C0F2C2F1E6A009A58B7 /* Coordinator.swift in Sources */,
 				10D82DDD2C301F0A00A989CB /* ShiftListView.swift in Sources */,
@@ -609,6 +624,7 @@
 				10C56C372C2F4932009A58B7 /* ClientOrderListPayView.swift in Sources */,
 				10C56C0A2C2F1D80009A58B7 /* ClientMenuListView.swift in Sources */,
 				10D82DFC2C30401A00A989CB /* WaiterOrderDetailView.swift in Sources */,
+				10D82E042C304A4D00A989CB /* AdminDeskListView.swift in Sources */,
 				10C56BF62C2F1882009A58B7 /* MobileRestaurantApp.swift in Sources */,
 				10D82D9C2C2FD5DE00A989CB /* Desk.swift in Sources */,
 				10D82DC62C2FFEE200A989CB /* ClientOrderListRow.swift in Sources */,

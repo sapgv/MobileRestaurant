@@ -17,9 +17,16 @@ final class Desk: Hashable, Codable {
         "\(places) мест"
     }
     
-    init(name: String, places: Int) {
+    let free: Bool
+    
+    init(
+        name: String,
+        places: Int,
+        free: Bool = Bool.random()
+    ) {
         self.name = name
         self.places = places
+        self.free = free
     }
     
 }
