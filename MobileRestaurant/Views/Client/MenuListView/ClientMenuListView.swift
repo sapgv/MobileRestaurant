@@ -104,7 +104,7 @@ struct ClientMenuListView: View {
                 }
                 
             }
-            .navigationTitle("Меню")
+            .navigationTitle("Заказ")
             .sheet(isPresented: self.$showSelectDesk, content: {
                 DeskListView(selectedDesk: self.$model.desk)
             })
