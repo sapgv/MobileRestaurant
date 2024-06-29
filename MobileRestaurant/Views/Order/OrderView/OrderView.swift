@@ -58,7 +58,6 @@ struct OrderView: View {
                 }
 
                 BottomOrderView(
-                    itemCount: self.orderModel.order.items.count,
                     value: self.orderModel.order.value,
                     action: {
                         completeOrder?(self.orderModel.order)

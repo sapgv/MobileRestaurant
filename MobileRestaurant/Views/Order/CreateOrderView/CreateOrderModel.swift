@@ -9,10 +9,32 @@ import Foundation
 
 final class CreateOrderModel: ObservableObject {
     
-    @Published private(set) var order: Order
+    @Published var date: Date
     
-    init(order: Order) {
-        self.order = order
+    @Published var desk: Desk? = nil
+    
+    @Published var items: [OrderItem] = []
+ 
+    var value: Decimal {
+        self.items.reduce(0, { $0 + $1.value })
+    }
+    
+    init(
+        date: Date = Date(),
+        desk: Desk? = nil,
+        items: [OrderItem] = []
+    ) {
+        self.date = date
+        self.desk = desk
+        self.items = items
+    }
+    
+    func createOrder() {
+        
+        let order = Order(date: date, desk: desk, items: items)
+        
+        Storage.shared.orders.append(order)
+                          
     }
     
 }

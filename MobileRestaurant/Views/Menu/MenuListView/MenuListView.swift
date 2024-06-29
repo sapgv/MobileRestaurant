@@ -79,11 +79,10 @@ struct MenuListView: View {
                     
                 }
                 
-                if !self.orderModel.order.items.isEmpty {
+                if !self.orderModel.items.isEmpty {
                 
                     BottomOrderView(
-                        itemCount: self.orderModel.order.items.count,
-                        value: self.orderModel.order.value,
+                        value: self.orderModel.value,
                         action: {
                             self.showCreateOrder = true
                         }
@@ -96,12 +95,10 @@ struct MenuListView: View {
             .sheet(isPresented: self.$showSelectDesk, content: {
                 DeskListView(selectedDesk: self.$orderModel.desk)
             })
-//            .sheet(isPresented: self.$showCreateOrder, content: {
-//                CreateOrderTabView(model: CreateOrderModel(order: self.orderModel.order))
-//            })
-            .fullScreenCover(isPresented: $showCreateOrder, content: {
-                CreateOrderTabView(model: CreateOrderModel(order: self.orderModel.order))
-                    })
+            .sheet(isPresented: self.$showCreateOrder, content: {
+                CreateOrderView()
+                    .environmentObject(CreateOrderModel(items: self.orderModel.items))
+            })
         }
         
     }

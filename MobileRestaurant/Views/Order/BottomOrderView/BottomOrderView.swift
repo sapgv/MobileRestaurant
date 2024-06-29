@@ -9,19 +9,15 @@ import SwiftUI
 
 struct BottomOrderView: View {
     
-    var itemCount: Int
-    
     var value: Decimal
     
     var action: (() -> Void)? = nil
     
     var body: some View {
         
-        Button(action: {
-            
-            action?()
-            
-        }, label: {
+        BottomActionView {
+            self.action?()
+        } content: {
             
             HStack(alignment: .center) {
                 
@@ -32,22 +28,22 @@ struct BottomOrderView: View {
                 
                 Spacer()
                 
-                Text("\(value) р")
+                Text("\(self.value) р")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.white)
                 
             }
-            .padding(6)
+            .padding(8)
             .background {
                 Color.green
             }
             
-        })
+        }
         
     }
 }
 
 #Preview {
-    BottomOrderView(itemCount: 5, value: 1200)
+    BottomOrderView(value: 1200)
 }

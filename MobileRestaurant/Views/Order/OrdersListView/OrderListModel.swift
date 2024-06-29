@@ -11,7 +11,7 @@ final class OrdersListModel: ObservableObject {
  
     @Published private(set) var orders: [Order]
     
-    init(orders: [Order] = []) {
+    init(orders: [Order] = Storage.shared.orders) {
         self.orders = orders
     }
     

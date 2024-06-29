@@ -30,3 +30,25 @@ final class OrderItem: Codable {
     }
     
 }
+
+extension OrderItem {
+    
+    static var arrayPreview: [OrderItem] {
+        
+        return Product.arrayPreview.map { product in
+            OrderItem(product: product, count: Int.random(in: 1...5))
+        }
+        
+    }
+    
+    static func preview(_ index: Int) -> OrderItem {
+        self.arrayPreview[index]
+    }
+    
+    static var preview: OrderItem {
+        
+        return arrayPreview[0]
+        
+    }
+    
+}

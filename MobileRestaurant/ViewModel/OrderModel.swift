@@ -19,6 +19,12 @@ final class OrderModel: ObservableObject {
         }
     }
     
+    @Published private(set) var items: [OrderItem] = []
+    
+    var value: Decimal {
+        self.items.reduce(0, { $0 + $1.value })
+    }
+    
     init(
         order: Order = Order(),
         desk: Desk? = Storage.shared.desk
@@ -28,8 +34,14 @@ final class OrderModel: ObservableObject {
     }
     
     func add(product: Product) {
-        self.order.add(product: product)
-        self.objectWillChange.send()
+        if let item = self.items.first(where: { $0.product == product }) {
+            item.count += 1
+        }
+        else {
+            self.items.append(OrderItem(product: product, count: 1))
+        }
+//        self.order.add(product: product)
+//        self.objectWillChange.send()
     }
     
 }

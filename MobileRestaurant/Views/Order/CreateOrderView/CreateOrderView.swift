@@ -11,25 +11,49 @@ struct CreateOrderView: View {
     
     @EnvironmentObject var model: CreateOrderModel
     
+    @State private var showConfirmOrder: Bool = false
+    
     var body: some View {
         
-        List {
-            
-            ForEach(model.order.items, id: \.product) { item in
+        NavigationStack {
+         
+            VStack(spacing: 0) {
                 
-                OrderItemListView(orderItem: item)
+                List {
+                    
+                    ForEach(model.items, id: \.product) { item in
+                        
+                        OrderItemListView(orderItem: item)
+                        
+                    }
+                    
+                    HStack {
+                        Text("Итого")
+                        Spacer()
+                        Text("\(model.value) р")
+                            .font(.title2)
+                    }
+                }
+                
+                NextButtonView {
+                    self.showConfirmOrder = true
+                }
                 
             }
-            
+                
+            .navigationTitle("Новый заказ")
+            .navigationDestination(isPresented: self.$showConfirmOrder) {
+                ConfirmCreateOrderView()
+                    .environmentObject(model)
+            }
             
         }
-//        .navigationTitle("Новый заказ 22")
         
     }
 }
 
 #Preview {
-    let model = CreateOrderModel(order: Order.preview)
+    let model = CreateOrderModel(items: OrderItem.arrayPreview)
     return CreateOrderView()
         .environmentObject(model)
 }

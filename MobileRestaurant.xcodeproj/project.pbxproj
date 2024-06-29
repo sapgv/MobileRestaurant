@@ -42,10 +42,12 @@
 		10D82D9F2C2FD89600A989CB /* DeskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D9E2C2FD89600A989CB /* DeskListView.swift */; };
 		10D82DA12C2FD8A600A989CB /* DeskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA02C2FD8A600A989CB /* DeskListModel.swift */; };
 		10D82DA32C2FDDA100A989CB /* DeskCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA22C2FDDA100A989CB /* DeskCircleView.swift */; };
-		10D82DA62C2FDF2200A989CB /* CreateOrderTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA52C2FDF2200A989CB /* CreateOrderTabView.swift */; };
 		10D82DA82C2FDF7A00A989CB /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA72C2FDF7A00A989CB /* CreateOrderView.swift */; };
 		10D82DAA2C2FDFC400A989CB /* CreateOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */; };
 		10D82DAD2C2FE98E00A989CB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DAC2C2FE98E00A989CB /* Storage.swift */; };
+		10D82DB32C2FF20200A989CB /* NextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DB22C2FF20200A989CB /* NextButtonView.swift */; };
+		10D82DB52C2FF59800A989CB /* ConfirmCreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DB42C2FF59800A989CB /* ConfirmCreateOrderView.swift */; };
+		10D82DB72C2FF6DB00A989CB /* BottomActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DB62C2FF6DB00A989CB /* BottomActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,10 +87,12 @@
 		10D82D9E2C2FD89600A989CB /* DeskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskListView.swift; sourceTree = "<group>"; };
 		10D82DA02C2FD8A600A989CB /* DeskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskListModel.swift; sourceTree = "<group>"; };
 		10D82DA22C2FDDA100A989CB /* DeskCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskCircleView.swift; sourceTree = "<group>"; };
-		10D82DA52C2FDF2200A989CB /* CreateOrderTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderTabView.swift; sourceTree = "<group>"; };
 		10D82DA72C2FDF7A00A989CB /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
-		10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderModel.swift; sourceTree = "<group>"; };
+		10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateOrderModel.swift; path = ../Views/Order/CreateOrderView/CreateOrderModel.swift; sourceTree = "<group>"; };
 		10D82DAC2C2FE98E00A989CB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		10D82DB22C2FF20200A989CB /* NextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonView.swift; sourceTree = "<group>"; };
+		10D82DB42C2FF59800A989CB /* ConfirmCreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCreateOrderView.swift; sourceTree = "<group>"; };
+		10D82DB62C2FF6DB00A989CB /* BottomActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				10C56BF72C2F1882009A58B7 /* MainView.swift */,
+				10D82DB22C2FF20200A989CB /* NextButtonView.swift */,
+				10D82DB62C2FF6DB00A989CB /* BottomActionView.swift */,
 				10C56C382C2F4C7F009A58B7 /* AccountView */,
 				10C56C2B2C2F3584009A58B7 /* Product */,
 				10C56C242C2F344F009A58B7 /* Order */,
@@ -268,6 +274,7 @@
 			children = (
 				10D82D972C2FD36800A989CB /* OrderModel.swift */,
 				10D82D992C2FD3C700A989CB /* MenuModel.swift */,
+				10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -285,9 +292,8 @@
 		10D82DA42C2FDF1000A989CB /* CreateOrderView */ = {
 			isa = PBXGroup;
 			children = (
-				10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */,
-				10D82DA52C2FDF2200A989CB /* CreateOrderTabView.swift */,
 				10D82DA72C2FDF7A00A989CB /* CreateOrderView.swift */,
+				10D82DB42C2FF59800A989CB /* ConfirmCreateOrderView.swift */,
 			);
 			path = CreateOrderView;
 			sourceTree = "<group>";
@@ -386,16 +392,18 @@
 				10C56C3A2C2F4C94009A58B7 /* AccountView.swift in Sources */,
 				10D82D952C2FCFC900A989CB /* Waiter.swift in Sources */,
 				10C56C332C2F43D1009A58B7 /* OrderStatus.swift in Sources */,
+				10D82DB52C2FF59800A989CB /* ConfirmCreateOrderView.swift in Sources */,
 				10D82D9A2C2FD3C700A989CB /* MenuModel.swift in Sources */,
 				10C56C3C2C2F4CF3009A58B7 /* AccountViewModel.swift in Sources */,
 				10C56C1A2C2F2B11009A58B7 /* OrderItem.swift in Sources */,
 				10C56C0D2C2F1DAE009A58B7 /* MenuListModel.swift in Sources */,
 				10C56C312C2F3F3E009A58B7 /* OrderItemListView.swift in Sources */,
-				10D82DA62C2FDF2200A989CB /* CreateOrderTabView.swift in Sources */,
 				10C56C1C2C2F2B8E009A58B7 /* OrdersListView.swift in Sources */,
 				10C56C422C2F5145009A58B7 /* OrderAccountStatus.swift in Sources */,
 				10D82DA32C2FDDA100A989CB /* DeskCircleView.swift in Sources */,
+				10D82DB32C2FF20200A989CB /* NextButtonView.swift in Sources */,
 				10C56C112C2F2179009A58B7 /* Menu.swift in Sources */,
+				10D82DB72C2FF6DB00A989CB /* BottomActionView.swift in Sources */,
 				10C56C0F2C2F1E6A009A58B7 /* Coordinator.swift in Sources */,
 				10C56C352C2F48A3009A58B7 /* OrderPayStatus.swift in Sources */,
 				10D82DA82C2FDF7A00A989CB /* CreateOrderView.swift in Sources */,
