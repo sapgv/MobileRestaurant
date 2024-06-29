@@ -15,7 +15,11 @@ final class Order: Codable {
     
     let number: Int
     
-    var desk: Desk? = nil
+    let desk: Desk?
+    
+    let orderType: OrderType?
+    
+    let orderPayType: OrderPayType?
     
     private(set) var status: OrderStatus
     
@@ -34,6 +38,8 @@ final class Order: Codable {
         number: Int = Int.random(in: 124567...567348),
         date: Date = Date(),
         desk: Desk? = nil,
+        orderType: OrderType? = nil,
+        orderPayType: OrderPayType? = nil,
         status: OrderStatus = .new,
         payStatus: OrderPayStatus = .needPay,
         accountStatus: OrderAccountStatus = .default,
@@ -43,6 +49,8 @@ final class Order: Codable {
         self.number = number
         self.date = date
         self.desk = desk
+        self.orderType = orderType
+        self.orderPayType = orderPayType
         self.status = status
         self.payStatus = payStatus
         self.accountStatus = accountStatus

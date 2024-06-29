@@ -11,7 +11,7 @@ struct CreateOrderView: View {
     
     @EnvironmentObject var model: CreateOrderModel
     
-    @State private var showConfirmOrder: Bool = false
+    @State private var showPayView: Bool = false
     
     var body: some View {
         
@@ -36,15 +36,14 @@ struct CreateOrderView: View {
                 }
                 
                 NextButtonView {
-                    self.showConfirmOrder = true
+                    self.showPayView = true
                 }
                 
             }
                 
             .navigationTitle("Новый заказ")
-            .navigationDestination(isPresented: self.$showConfirmOrder) {
-                ConfirmCreateOrderView()
-                    .environmentObject(model)
+            .navigationDestination(isPresented: self.$showPayView) {
+                CreateOrderPayView()
             }
             
         }

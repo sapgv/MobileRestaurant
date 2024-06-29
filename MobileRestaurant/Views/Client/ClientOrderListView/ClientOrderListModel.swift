@@ -13,10 +13,12 @@ final class ClientOrderListModel: ObservableObject {
     
     init(orders: [Order] = Storage.shared.orders) {
         self.orders = orders
+        NotificationCenter.default.addObserver(self, selector: #selector(didCreateOrder), name: .didCreateOrder, object: nil)
     }
     
-    func add(order: Order) {
-        self.orders.append(order)
+    @objc
+    private func didCreateOrder() {
+        self.orders = Storage.shared.orders
     }
     
 }

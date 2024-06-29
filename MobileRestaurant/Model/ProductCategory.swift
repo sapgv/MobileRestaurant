@@ -27,9 +27,9 @@ extension ProductCategory {
         let list: [ProductCategory] = [
         
             ProductCategory(name: "МИДИИ", products: [
-                Product(name: "Мидии белое вино, петрушка", price: 850, image: "1", netto: "450/30/70г"),
-                Product(name: "Мидии пармезан, сливки", price: 850, image: "2", netto: "450/30/70г"),
-                Product(name: "Мидии в томатном соусе", price: 850, image: "3", netto: "450/30/70г"),
+                Product(name: "Мидии белое вино, петрушка", price: 450, image: "1", netto: "450/30/70г"),
+                Product(name: "Мидии пармезан, сливки", price: 550, image: "2", netto: "450/30/70г"),
+                Product(name: "Мидии в томатном соусе", price: 650, image: "3", netto: "450/30/70г"),
             ]),
             
             ProductCategory(name: "УСТРИЦЫ", products: [

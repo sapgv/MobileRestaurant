@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum OrderType: String, CaseIterable {
+enum OrderType: String, CaseIterable, Codable {
     case restaurant = "В ресторане"
     case toGo = "На вынос"
     case delivery = "Доставка"

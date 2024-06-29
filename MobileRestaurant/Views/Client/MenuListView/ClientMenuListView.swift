@@ -23,7 +23,6 @@ struct ClientMenuListView: View {
                 
                 List {
                     
-                    
                     Section {
                         
                         VStack() {
@@ -113,9 +112,10 @@ struct ClientMenuListView: View {
             .sheet(isPresented: self.$showSelectDesk, content: {
                 DeskListView(selectedDesk: self.$model.desk)
             })
-            .sheet(isPresented: self.$showCreateOrder, content: {
+            .sheet(isPresented: self.$showCreateOrder,
+                   content: {
                 CreateOrderView()
-                    .environmentObject(CreateOrderModel(items: self.model.items))
+                    .environmentObject(CreateOrderModel(orderType: self.model.orderType, desk: self.model.desk, items: self.model.items))
                     .environmentObject(model)
             })
         }

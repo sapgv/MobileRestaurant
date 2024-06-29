@@ -21,21 +21,52 @@ struct ConfirmCreateOrderView: View {
             
             List {
                 
-                VStack {
-                 
-                    HStack {
-                        Spacer()
-                        Text(model.date.formatted(date: .complete, time: .omitted))
-                            .foregroundStyle(.secondary)
-                    }
+                Section {
                     
-                    HStack(alignment: .center) {
-                        Spacer()
-                        Text("\(model.value) р")
-                            .font(.title)
+                    VStack {
+                     
+                        HStack {
+                            Spacer()
+                            Text(model.date.formatted(date: .complete, time: .omitted))
+                                .foregroundStyle(.secondary)
+                        }
+                        
+                        HStack(alignment: .center) {
+                            Spacer()
+                            Text("\(model.value) р")
+                                .font(.title)
+                            
+                        }
                         
                     }
                     
+                }
+                
+                
+                
+                Section {
+                    
+                    if let orderType = model.orderType {
+                        
+                        LabeledContent("Тип заказа", value: orderType.rawValue)
+                        
+                        
+                    }
+                    
+                    if model.orderType == .restaurant, let desk = model.desk {
+                        
+                        LabeledContent("Стол", value: desk.name)
+                        
+                    }
+                    
+                    if let orderPayType = model.orderPayType {
+                        
+                        LabeledContent("Оплата", value: orderPayType.rawValue)
+                        
+                    }
+                    
+                } header: {
+                    Text("Подробно")
                 }
                 
             }
@@ -67,7 +98,7 @@ struct ConfirmCreateOrderView: View {
 }
 
 #Preview {
-    let model = CreateOrderModel(items: OrderItem.arrayPreview)
+    let model = CreateOrderModel(orderType: .restaurant, desk: Desk.preview, items: OrderItem.arrayPreview)
     return ConfirmCreateOrderView()
         .environmentObject(model)
 }

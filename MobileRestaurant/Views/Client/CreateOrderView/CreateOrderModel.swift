@@ -13,6 +13,10 @@ final class CreateOrderModel: ObservableObject {
     
     @Published var desk: Desk? = nil
     
+    @Published var orderType: OrderType? = nil
+    
+    @Published var orderPayType: OrderPayType? = nil
+    
     @Published var items: [OrderItem] = []
  
     var value: Decimal {
@@ -21,19 +25,31 @@ final class CreateOrderModel: ObservableObject {
     
     init(
         date: Date = Date(),
+        orderType: OrderType? = nil,
+        orderPayType: OrderPayType? = nil,
         desk: Desk? = nil,
         items: [OrderItem] = []
     ) {
         self.date = date
+        self.orderType = orderType
+        self.orderPayType = orderPayType
         self.desk = desk
         self.items = items
     }
     
     func createOrder() {
         
-        let order = Order(date: date, desk: desk, items: items)
+        let order = Order(
+            date: date,
+            desk: desk,
+            orderType: orderType,
+            orderPayType: orderPayType,
+            items: items
+        )
         
         Storage.shared.orders.append(order)
+        
+        NotificationCenter.default.post(name: .didCreateOrder, object: nil)
         
         self.items.removeAll()
                           

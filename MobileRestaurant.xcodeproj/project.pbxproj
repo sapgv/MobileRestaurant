@@ -52,6 +52,9 @@
 		10D82DC82C2FFF3300A989CB /* OrderStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DC72C2FFF3300A989CB /* OrderStatusView.swift */; };
 		10D82DCC2C30033E00A989CB /* CreateOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DCB2C30033E00A989CB /* CreateOrderModel.swift */; };
 		10D82DCE2C30075A00A989CB /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DCD2C30075A00A989CB /* OrderType.swift */; };
+		10D82DD02C30108900A989CB /* CreateOrderPayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DCF2C30108900A989CB /* CreateOrderPayView.swift */; };
+		10D82DD22C3010A800A989CB /* OrderPayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DD12C3010A800A989CB /* OrderPayType.swift */; };
+		10D82DD52C3015DC00A989CB /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DD42C3015DC00A989CB /* Notifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,9 @@
 		10D82DC72C2FFF3300A989CB /* OrderStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusView.swift; sourceTree = "<group>"; };
 		10D82DCB2C30033E00A989CB /* CreateOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOrderModel.swift; sourceTree = "<group>"; };
 		10D82DCD2C30075A00A989CB /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
+		10D82DCF2C30108900A989CB /* CreateOrderPayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderPayView.swift; sourceTree = "<group>"; };
+		10D82DD12C3010A800A989CB /* OrderPayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderPayType.swift; sourceTree = "<group>"; };
+		10D82DD42C3015DC00A989CB /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,7 @@
 		10C56BF42C2F1882009A58B7 /* MobileRestaurant */ = {
 			isa = PBXGroup;
 			children = (
+				10D82DD32C3015C800A989CB /* Notifications */,
 				10C56BF52C2F1882009A58B7 /* MobileRestaurantApp.swift */,
 				10C56C0E2C2F1E6A009A58B7 /* Coordinator.swift */,
 				10D82D962C2FD22300A989CB /* ViewModel */,
@@ -167,6 +174,7 @@
 				10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */,
 				10D82D942C2FCFC900A989CB /* Waiter.swift */,
 				10D82DCD2C30075A00A989CB /* OrderType.swift */,
+				10D82DD12C3010A800A989CB /* OrderPayType.swift */,
 				10D82D9B2C2FD5DE00A989CB /* Desk.swift */,
 			);
 			path = Model;
@@ -290,6 +298,7 @@
 			children = (
 				10D82DCB2C30033E00A989CB /* CreateOrderModel.swift */,
 				10D82DA72C2FDF7A00A989CB /* CreateOrderView.swift */,
+				10D82DCF2C30108900A989CB /* CreateOrderPayView.swift */,
 				10D82DB42C2FF59800A989CB /* ConfirmCreateOrderView.swift */,
 			);
 			path = CreateOrderView;
@@ -356,6 +365,14 @@
 				10D82DC12C2FFDE700A989CB /* ClientOrderDetailView.swift */,
 			);
 			path = ClientOrderDetailView;
+			sourceTree = "<group>";
+		};
+		10D82DD32C3015C800A989CB /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				10D82DD42C3015DC00A989CB /* Notifications.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D82DD22C3010A800A989CB /* OrderPayType.swift in Sources */,
 				10C56C212C2F30AF009A58B7 /* BottomOrderView.swift in Sources */,
 				10C56C282C2F349D009A58B7 /* OrderView.swift in Sources */,
 				10D82DA12C2FD8A600A989CB /* DeskListModel.swift in Sources */,
@@ -440,6 +458,7 @@
 				10D82D9F2C2FD89600A989CB /* DeskListView.swift in Sources */,
 				10C56C2E2C2F359A009A58B7 /* ProductListView.swift in Sources */,
 				10C56C182C2F2AC5009A58B7 /* Order.swift in Sources */,
+				10D82DD02C30108900A989CB /* CreateOrderPayView.swift in Sources */,
 				10C56C402C2F4EFA009A58B7 /* AccountOrderListView.swift in Sources */,
 				10C56C3A2C2F4C94009A58B7 /* AccountView.swift in Sources */,
 				10D82D952C2FCFC900A989CB /* Waiter.swift in Sources */,
@@ -468,6 +487,7 @@
 				10D82D9C2C2FD5DE00A989CB /* Desk.swift in Sources */,
 				10D82DC62C2FFEE200A989CB /* ClientOrderListRow.swift in Sources */,
 				10C56C052C2F1C9E009A58B7 /* Product.swift in Sources */,
+				10D82DD52C3015DC00A989CB /* Notifications.swift in Sources */,
 				10C56C132C2F219A009A58B7 /* ProductCategory.swift in Sources */,
 				10C56C2A2C2F34C1009A58B7 /* OrderViewModel.swift in Sources */,
 				10D82DBE2C2FFD3000A989CB /* WaiterTableListView.swift in Sources */,
