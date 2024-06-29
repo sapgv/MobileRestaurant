@@ -1,5 +1,5 @@
 //
-//  OrderListPayView.swift
+//  ClientOrderListPayView.swift
 //  MobileRestaurant
 //
 //  Created by Grigory Sapogov on 29.06.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct OrderListPayView: View {
+struct ClientOrderListPayView: View {
     
     var order: Order
     
@@ -29,5 +29,5 @@ struct OrderListPayView: View {
 }
 
 #Preview {
-    OrderListPayView(order: Order.preview)
+    ClientOrderListPayView(order: Order.preview)
 }

@@ -34,6 +34,8 @@ final class CreateOrderModel: ObservableObject {
         let order = Order(date: date, desk: desk, items: items)
         
         Storage.shared.orders.append(order)
+        
+        self.items.removeAll()
                           
     }
     

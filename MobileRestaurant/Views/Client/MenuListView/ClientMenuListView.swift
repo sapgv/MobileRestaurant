@@ -1,5 +1,5 @@
 //
-//  MenuListView.swift
+//  ClientMenuListView.swift
 //  MobileRestaurant
 //
 //  Created by Grigory Sapogov on 28.06.2024.
@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-struct MenuListView: View {
+struct ClientMenuListView: View {
     
-    @StateObject private var model = MenuModel()
-    
-    @EnvironmentObject var orderModel: OrderModel
+    @EnvironmentObject var model: ClientMenuOrderModel
     
     @State private var showSelectDesk = false
     
@@ -32,7 +30,7 @@ struct MenuListView: View {
                             showSelectDesk = true
                             
                         }, label: {
-                            if let desk = orderModel.desk {
+                            if let desk = model.desk {
                                 
                                 HStack {
                                     DeskCircleView(name: desk.name)
@@ -58,7 +56,7 @@ struct MenuListView: View {
                                     ProductListView(product: product)
                                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                             Button {
-                                                self.orderModel.add(product: product)
+                                                self.model.add(product: product)
                                                 
                                             } label: {
                                                 Text("Добавить")
@@ -79,10 +77,10 @@ struct MenuListView: View {
                     
                 }
                 
-                if !self.orderModel.items.isEmpty {
+                if !self.model.items.isEmpty {
                 
                     BottomOrderView(
-                        value: self.orderModel.value,
+                        value: self.model.value,
                         action: {
                             self.showCreateOrder = true
                         }
@@ -93,11 +91,12 @@ struct MenuListView: View {
             }
             .navigationTitle("Меню")
             .sheet(isPresented: self.$showSelectDesk, content: {
-                DeskListView(selectedDesk: self.$orderModel.desk)
+                DeskListView(selectedDesk: self.$model.desk)
             })
             .sheet(isPresented: self.$showCreateOrder, content: {
                 CreateOrderView()
-                    .environmentObject(CreateOrderModel(items: self.orderModel.items))
+                    .environmentObject(CreateOrderModel(items: self.model.items))
+                    .environmentObject(model)
             })
         }
         
@@ -106,7 +105,7 @@ struct MenuListView: View {
 }
 
 #Preview {
-    let model = OrderModel(order: Order.preview, desk: Desk.preview)
-    return MenuListView()
+    let model = ClientMenuOrderModel(desk: Desk.preview)
+    return ClientMenuListView()
         .environmentObject(model)
 }

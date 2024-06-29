@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ConfirmCreateOrderView: View {
     
+    @Environment(\.dismiss) var dismiss
+    
     @EnvironmentObject var model: CreateOrderModel
+    
+    @EnvironmentObject var orderModel: ClientMenuOrderModel
     
     var body: some View {
         
@@ -38,6 +42,8 @@ struct ConfirmCreateOrderView: View {
             
             BottomActionView {
                 self.model.createOrder()
+                self.orderModel.reset()
+                self.dismiss()
                 
             } content: {
                 

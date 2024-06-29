@@ -1,5 +1,5 @@
 //
-//  MenuListModel.swift
+//  ClientMenuListModel.swift
 //  MobileRestaurant
 //
 //  Created by Grigory Sapogov on 28.06.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MenuListModel: ObservableObject {
+final class ClientMenuListModel: ObservableObject {
  
     private(set) var order: Order = Order()
     

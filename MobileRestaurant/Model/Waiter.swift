@@ -11,8 +11,14 @@ final class Waiter {
     
     let name: String
     
-    init(name: String) {
+    let image: String
+    
+    init(
+        name: String,
+        image: String
+    ) {
         self.name = name
+        self.image = image
     }
     
 }
@@ -20,9 +26,12 @@ final class Waiter {
 extension Waiter {
     
     static var previewList: [Waiter] {
-        
-        
-        []
+        [
+            Waiter(name: "Екатерина", image: "w1"),
+            Waiter(name: "Олеся", image: "w2"),
+            Waiter(name: "Анна", image: "w3"),
+            Waiter(name: "Света", image: "w4"),
+        ]
     }
     
 }

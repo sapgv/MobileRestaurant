@@ -9,17 +9,17 @@ import SwiftUI
 
 struct MainView: View {
     
-    @StateObject private var orderModel: OrderModel = OrderModel()
+    @StateObject private var model: ClientMenuOrderModel = ClientMenuOrderModel()
     
     var body: some View {
         
         TabView {
             
-            MenuListView()
+            ClientMenuListView()
                 .tabItem { Label("Меню", systemImage: "menucard") }
-                .environmentObject(orderModel)
+                .environmentObject(model)
             
-            OrdersListView()
+            ClientOrderListView()
                 .tabItem { Label("Заказы", systemImage: "fork.knife") }
             
             AccountView()

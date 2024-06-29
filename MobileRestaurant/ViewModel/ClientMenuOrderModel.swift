@@ -1,17 +1,15 @@
 //
-//  OrderModel.swift
+//  ClientMenuOrderModel.swift
 //  MobileRestaurant
 //
 //  Created by Grigory Sapogov on 29.06.2024.
 //
 
 import Foundation
-import SwiftUI
-import Combine
 
-final class OrderModel: ObservableObject {
+final class ClientMenuOrderModel: ObservableObject {
     
-    @Published private(set) var order: Order
+    @Published private(set) var list: [ProductCategory]
     
     @Published var desk: Desk? {
         didSet {
@@ -26,11 +24,11 @@ final class OrderModel: ObservableObject {
     }
     
     init(
-        order: Order = Order(),
-        desk: Desk? = Storage.shared.desk
+        desk: Desk? = Storage.shared.desk,
+        list: [ProductCategory] = ProductCategory.createList()
     ) {
-        self.order = order
         self.desk = desk
+        self.list = list
     }
     
     func add(product: Product) {
@@ -40,8 +38,11 @@ final class OrderModel: ObservableObject {
         else {
             self.items.append(OrderItem(product: product, count: 1))
         }
-//        self.order.add(product: product)
-//        self.objectWillChange.send()
+        self.objectWillChange.send()
+    }
+    
+    func reset() {
+        self.items.removeAll()
     }
     
 }

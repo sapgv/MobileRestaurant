@@ -20,4 +20,8 @@ extension Coordinator {
         case selectDesk
     }
     
+    enum ClientOrderListView: Hashable {
+        case showClinetOrder(Order)
+    }
+    
 }
