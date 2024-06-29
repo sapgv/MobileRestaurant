@@ -4,7 +4,7 @@
 
 # [Ссылка на Видеопрезентацию](https://youtu.be/UI8JoG4dFC8)
 
-| Главный экран | Карточка отделения | Построение маршрута | Где потратить мультибонус |
+| Главный экран | Создание заказа | Список заказов | Детали заказа |
 |----------------|:---------:|---------------|:---------:|
 | <img src="https://github.com/sapgv/MobileRestaurant/blob/main/1.png" width="200"> | <img src="https://github.com/sapgv/MobileRestaurant/blob/main/2.png" width="200"> | <img src="https://github.com/sapgv/MobileRestaurant/blob/main/3.png" width="200"> | <img src="https://github.com/sapgv/MobileRestaurant/blob/main/4.png" width="200"> |
 
