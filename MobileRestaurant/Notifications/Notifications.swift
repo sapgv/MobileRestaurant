@@ -11,4 +11,6 @@ extension Notification.Name {
     
     static let didCreateOrder = Notification.Name("didCreateOrder")
     
+    static let didChangeOrderStatus = Notification.Name("didChangeOrderStatus")
+    
 }

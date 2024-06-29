@@ -18,7 +18,7 @@ struct OrderStatusView: View {
                 Color(uiColor: status.color)
             }
             .foregroundStyle(Color.white)
-            .font(.caption)
+//            .font(.caption)
             .clipShape(RoundedRectangle(cornerRadius: 3))
     }
 }

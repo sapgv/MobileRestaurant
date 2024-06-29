@@ -66,6 +66,18 @@ final class Order: Codable {
         }
     }
     
+    func update(status: OrderStatus) {
+        self.status = status
+        Storage.shared.orders = Storage.shared.orders.map { storageOrder in
+            if storageOrder.id == self.id {
+                storageOrder.status = status
+                return storageOrder
+            }
+            return storageOrder
+        }
+        NotificationCenter.default.post(name: .didChangeOrderStatus, object: nil)
+    }
+    
 }
 
 extension Order {
@@ -94,7 +106,7 @@ extension Order {
         
         let item = OrderItem(product: Product.preview, count: 3)
         
-        let order = Order(items: [item])
+        let order = Order(desk: Desk.preview, orderType: .restaurant, orderPayType: .card, items: [item])
         
         return order
         

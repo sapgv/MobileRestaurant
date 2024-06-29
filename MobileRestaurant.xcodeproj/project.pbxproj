@@ -63,6 +63,14 @@
 		10D82DE92C3025E900A989CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DE82C3025E900A989CB /* AppDelegate.swift */; };
 		10D82DEB2C30269700A989CB /* DeskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DEA2C30269700A989CB /* DeskListModel.swift */; };
 		10D82DED2C302CC000A989CB /* ShiftDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DEC2C302CC000A989CB /* ShiftDetailViewModel.swift */; };
+		10D82DF02C3037FE00A989CB /* WaiterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DEF2C3037FE00A989CB /* WaiterDetailView.swift */; };
+		10D82DF22C30380900A989CB /* WaiterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DF12C30380900A989CB /* WaiterDetailViewModel.swift */; };
+		10D82DF52C303C9300A989CB /* WaiterOrderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DF42C303C9300A989CB /* WaiterOrderListView.swift */; };
+		10D82DF72C303D2900A989CB /* WaiterOrderListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DF62C303D2900A989CB /* WaiterOrderListModel.swift */; };
+		10D82DF92C303E0300A989CB /* WaiterOrderListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DF82C303E0300A989CB /* WaiterOrderListRow.swift */; };
+		10D82DFC2C30401A00A989CB /* WaiterOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DFB2C30401A00A989CB /* WaiterOrderDetailView.swift */; };
+		10D82DFE2C30403D00A989CB /* WaiterOrderDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DFD2C30403D00A989CB /* WaiterOrderDetailModel.swift */; };
+		10D82E012C30424600A989CB /* OrderStatusListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82E002C30424600A989CB /* OrderStatusListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +131,14 @@
 		10D82DE82C3025E900A989CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10D82DEA2C30269700A989CB /* DeskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskListModel.swift; sourceTree = "<group>"; };
 		10D82DEC2C302CC000A989CB /* ShiftDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDetailViewModel.swift; sourceTree = "<group>"; };
+		10D82DEF2C3037FE00A989CB /* WaiterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterDetailView.swift; sourceTree = "<group>"; };
+		10D82DF12C30380900A989CB /* WaiterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterDetailViewModel.swift; sourceTree = "<group>"; };
+		10D82DF42C303C9300A989CB /* WaiterOrderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterOrderListView.swift; sourceTree = "<group>"; };
+		10D82DF62C303D2900A989CB /* WaiterOrderListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterOrderListModel.swift; sourceTree = "<group>"; };
+		10D82DF82C303E0300A989CB /* WaiterOrderListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterOrderListRow.swift; sourceTree = "<group>"; };
+		10D82DFB2C30401A00A989CB /* WaiterOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterOrderDetailView.swift; sourceTree = "<group>"; };
+		10D82DFD2C30403D00A989CB /* WaiterOrderDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaiterOrderDetailModel.swift; sourceTree = "<group>"; };
+		10D82E002C30424600A989CB /* OrderStatusListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +216,7 @@
 		10C56C082C2F1D3F009A58B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				10D82DFF2C30423500A989CB /* OrderStatusListView */,
 				10D82DDB2C301EFE00A989CB /* Shift */,
 				10D82DBB2C2FFD0B00A989CB /* CommonView */,
 				10D82DB92C2FFCEE00A989CB /* Client */,
@@ -353,6 +370,9 @@
 		10D82DBA2C2FFCF800A989CB /* Waiter */ = {
 			isa = PBXGroup;
 			children = (
+				10D82DFA2C30400D00A989CB /* WaiterOrderDetailView */,
+				10D82DF32C303C8400A989CB /* WiaterOrderListView */,
+				10D82DEE2C3037EA00A989CB /* WaiterDetailView */,
 				10D82DB82C2FFCDD00A989CB /* WaiterTableListView */,
 			);
 			path = Waiter;
@@ -429,6 +449,42 @@
 				10D82DE22C30244400A989CB /* ShiftDetailView.swift */,
 			);
 			path = ShiftDetailView;
+			sourceTree = "<group>";
+		};
+		10D82DEE2C3037EA00A989CB /* WaiterDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				10D82DF12C30380900A989CB /* WaiterDetailViewModel.swift */,
+				10D82DEF2C3037FE00A989CB /* WaiterDetailView.swift */,
+			);
+			path = WaiterDetailView;
+			sourceTree = "<group>";
+		};
+		10D82DF32C303C8400A989CB /* WiaterOrderListView */ = {
+			isa = PBXGroup;
+			children = (
+				10D82DF62C303D2900A989CB /* WaiterOrderListModel.swift */,
+				10D82DF42C303C9300A989CB /* WaiterOrderListView.swift */,
+				10D82DF82C303E0300A989CB /* WaiterOrderListRow.swift */,
+			);
+			path = WiaterOrderListView;
+			sourceTree = "<group>";
+		};
+		10D82DFA2C30400D00A989CB /* WaiterOrderDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				10D82DFD2C30403D00A989CB /* WaiterOrderDetailModel.swift */,
+				10D82DFB2C30401A00A989CB /* WaiterOrderDetailView.swift */,
+			);
+			path = WaiterOrderDetailView;
+			sourceTree = "<group>";
+		};
+		10D82DFF2C30423500A989CB /* OrderStatusListView */ = {
+			isa = PBXGroup;
+			children = (
+				10D82E002C30424600A989CB /* OrderStatusListView.swift */,
+			);
+			path = OrderStatusListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +569,8 @@
 				10C56BF82C2F1882009A58B7 /* MainView.swift in Sources */,
 				10D82DAD2C2FE98E00A989CB /* Storage.swift in Sources */,
 				10D82D9F2C2FD89600A989CB /* DeskListView.swift in Sources */,
+				10D82E012C30424600A989CB /* OrderStatusListView.swift in Sources */,
+				10D82DF72C303D2900A989CB /* WaiterOrderListModel.swift in Sources */,
 				10C56C2E2C2F359A009A58B7 /* ProductListView.swift in Sources */,
 				10C56C182C2F2AC5009A58B7 /* Order.swift in Sources */,
 				10D82DD02C30108900A989CB /* CreateOrderPayView.swift in Sources */,
@@ -529,12 +587,15 @@
 				10D82DEB2C30269700A989CB /* DeskListModel.swift in Sources */,
 				10C56C3C2C2F4CF3009A58B7 /* AccountViewModel.swift in Sources */,
 				10C56C1A2C2F2B11009A58B7 /* OrderItem.swift in Sources */,
+				10D82DF52C303C9300A989CB /* WaiterOrderListView.swift in Sources */,
 				10C56C312C2F3F3E009A58B7 /* OrderItemListView.swift in Sources */,
 				10C56C1C2C2F2B8E009A58B7 /* ClientOrderListView.swift in Sources */,
+				10D82DFE2C30403D00A989CB /* WaiterOrderDetailModel.swift in Sources */,
 				10C56C422C2F5145009A58B7 /* OrderAccountStatus.swift in Sources */,
 				10D82DA32C2FDDA100A989CB /* DeskCircleView.swift in Sources */,
 				10D82DC82C2FFF3300A989CB /* OrderStatusView.swift in Sources */,
 				10D82DCC2C30033E00A989CB /* CreateOrderModel.swift in Sources */,
+				10D82DF02C3037FE00A989CB /* WaiterDetailView.swift in Sources */,
 				10D82DB32C2FF20200A989CB /* NextButtonView.swift in Sources */,
 				10C56C112C2F2179009A58B7 /* Menu.swift in Sources */,
 				10D82DB72C2FF6DB00A989CB /* BottomActionView.swift in Sources */,
@@ -544,8 +605,10 @@
 				10C56C352C2F48A3009A58B7 /* OrderPayStatus.swift in Sources */,
 				10D82DE12C30228E00A989CB /* CurrentShiftModel.swift in Sources */,
 				10D82DA82C2FDF7A00A989CB /* CreateOrderView.swift in Sources */,
+				10D82DF92C303E0300A989CB /* WaiterOrderListRow.swift in Sources */,
 				10C56C372C2F4932009A58B7 /* ClientOrderListPayView.swift in Sources */,
 				10C56C0A2C2F1D80009A58B7 /* ClientMenuListView.swift in Sources */,
+				10D82DFC2C30401A00A989CB /* WaiterOrderDetailView.swift in Sources */,
 				10C56BF62C2F1882009A58B7 /* MobileRestaurantApp.swift in Sources */,
 				10D82D9C2C2FD5DE00A989CB /* Desk.swift in Sources */,
 				10D82DC62C2FFEE200A989CB /* ClientOrderListRow.swift in Sources */,
@@ -555,6 +618,7 @@
 				10C56C2A2C2F34C1009A58B7 /* OrderViewModel.swift in Sources */,
 				10D82DBE2C2FFD3000A989CB /* WaiterTableListView.swift in Sources */,
 				10D82DE92C3025E900A989CB /* AppDelegate.swift in Sources */,
+				10D82DF22C30380900A989CB /* WaiterDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

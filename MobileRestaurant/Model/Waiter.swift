@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class Waiter: Codable {
+final class Waiter: Identifiable, Codable {
+    
+    var id: String {
+        self.name
+    }
     
     let name: String
     
@@ -24,6 +28,10 @@ final class Waiter: Codable {
 }
 
 extension Waiter {
+    
+    static var preview: Waiter {
+        arrayPreview[0]
+    }
     
     static var arrayPreview: [Waiter] {
         [

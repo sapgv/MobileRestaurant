@@ -15,6 +15,8 @@ struct ClientMenuListView: View {
     
     @State private var showCreateOrder = false
     
+    @State private var showWaiter: Waiter?
+    
     @EnvironmentObject private var currentShiftModel: CurrentShiftModel
     
     var body: some View {
@@ -27,68 +29,28 @@ struct ClientMenuListView: View {
                     
                     Section {
                         
-                        VStack() {
+                        VStack {
                             
-                            HStack {
-                                Text("ЗАКАЗ")
-                                Spacer()
-                            }
+                            self.pickerView
                             
-                            Picker("Заказ", selection: $model.orderType) {
-                            
-                                ForEach(OrderType.allCases, id: \.self) { orderType in
-                                    Text(orderType.rawValue).tag(orderType)
-                                }
-                                
-                            }
-                            .pickerStyle(.segmented)
-                            
-                            if model.orderType == .restaurant, let desk = model.desk {
+                            if model.orderType == .restaurant {
                                 
                                 HStack(alignment: .center) {
                                     
-                                    if let waiter = currentShiftModel.currentShift.data[desk] {
-                                        
-                                        VStack(alignment: .leading, spacing: 8) {
-                                            
-//                                            LabeledContent(desk.name, value: desk.placeTitle)
-                                            
-                                            HStack {
-                                                Text(desk.name)
-                                                Text(desk.placeTitle)
-                                                    .foregroundStyle(.secondary)
-                                            }
-                                            
-                                            HStack {
-                                                
-                                                Image(waiter.image)
-                                                    .resizable()
-                                                    .frame(width: 44, height: 44)
-                                                    .clipShape(Circle())
-                                                
-                                                VStack(alignment: .leading) {
-                                                    
-                                                    Text(waiter.name)
-                                                    Text("Официант")
-                                                        .foregroundStyle(.secondary)
-                                                    
-                                                }
-                                                
-                                                Spacer()
-                                                
-                                                Button(action: {
-                                                    showSelectDesk = true
-                                                }, label: {
-                                                    Image(systemName: "chair.lounge")
-                                                        .resizable()
-                                                        .frame(width: 22, height: 22)
-                                                })
-                                                
-                                            }
-                                            
-                                        }
-                                        
+                                    if let desk = model.desk, let waiter = currentShiftModel.currentShift.data[desk] {
+                                        self.waiterView(desk: desk, waiter: waiter)
+                                        Spacer()
+                                        self.showDeskView
                                     }
+                                    else {
+                                        self.showDeskView
+                                        Spacer()
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                    
                                     
                                 }
                                 .padding(4)
@@ -96,10 +58,7 @@ struct ClientMenuListView: View {
                             
                         }
                         
-                    } header: {
-                        
                     }
-                    .headerProminence(.increased)
 
                     ForEach(model.list, id: \.name) { category in
 
@@ -149,6 +108,10 @@ struct ClientMenuListView: View {
             .sheet(isPresented: self.$showSelectDesk, content: {
                 DeskListView(selectedDesk: self.$model.desk)
             })
+            
+            .sheet(item: $showWaiter, content: { waiter in
+                WaiterDetailView(model: WaiterDetailViewModel(waiter: waiter))
+            })
             .sheet(isPresented: self.$showCreateOrder,
                    content: {
                 CreateOrderView()
@@ -156,6 +119,68 @@ struct ClientMenuListView: View {
                     .environmentObject(model)
             })
         }
+        
+    }
+    
+    @ViewBuilder
+    var pickerView: some View {
+        Picker("Заказ", selection: $model.orderType) {
+            ForEach(OrderType.allCases, id: \.self) { orderType in
+                Text(orderType.rawValue).tag(orderType)
+            }
+        }
+        .pickerStyle(.segmented)
+    }
+    
+    func waiterView(desk: Desk, waiter: Waiter) -> some View {
+        
+        VStack(alignment: .leading, spacing: 8) {
+            
+            HStack {
+                Text(desk.name)
+                Text(desk.placeTitle)
+                    .foregroundStyle(.secondary)
+            }
+            
+            HStack {
+                
+                Image(waiter.image)
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .clipShape(Circle())
+                
+                VStack(alignment: .leading) {
+                    
+                    Button(action: {
+                        self.showWaiter = waiter
+                        
+                    }, label: {
+                        Text(waiter.name)
+                    })
+                    .buttonStyle(BorderlessButtonStyle())
+                    Text("Официант")
+                        .foregroundStyle(.secondary)
+                    
+                }
+                
+                Spacer()
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    @ViewBuilder
+    var showDeskView: some View {
+        
+        Button(action: {
+            showSelectDesk = true
+        }, label: {
+            Text("Выбрать стол")
+        })
+        .buttonStyle(BorderlessButtonStyle())
         
     }
     

@@ -20,10 +20,15 @@ struct MainView: View {
                 .environmentObject(model)
             
             ClientOrderListView()
-                .tabItem { Label("Заказы", systemImage: "fork.knife") }
+                .tabItem { Label("Заказы клиента", systemImage: "fork.knife") }
+            
+            WaiterOrderListView(model: WaiterOrderListModel(waiter: .preview))
+                .tabItem { Label("Заказы официанта", systemImage: "fork.knife.circle.fill") }
             
             ShiftListView(model: ShiftListViewModel())
                 .tabItem { Label("Смены", systemImage: "person.badge.clock") }
+            
+            
             
         }
         

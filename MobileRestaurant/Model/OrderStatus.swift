@@ -7,7 +7,11 @@
 
 import UIKit
 
-enum OrderStatus: String, Codable {
+enum OrderStatus: String, Codable, CaseIterable, Identifiable {
+    
+    var id: OrderStatus {
+        self
+    }
     
     case new = "Новый"
     case cooking = "Готовится"

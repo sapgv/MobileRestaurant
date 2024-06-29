@@ -1,5 +1,5 @@
 //
-//  ClientOrderDetailView.swift
+//  WaiterOrderDetailView.swift
 //  MobileRestaurant
 //
 //  Created by Grigory Sapogov on 29.06.2024.
@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct ClientOrderDetailView: View {
+struct WaiterOrderDetailView: View {
     
-    @StateObject var model: ClientOrderDetailModel
+    @StateObject var model: WaiterOrderDetailModel
+    
+    @State private var currentStatus: OrderStatus?
     
     var body: some View {
        
@@ -49,20 +51,26 @@ struct ClientOrderDetailView: View {
                 }
                 .headerProminence(.increased)
                 
-                Section {
-
-                    Button(action: {}, label: {
-                        Text("Позвать официанта")
-                    })
-                    
-                    Button(action: {}, label: {
-                        Text("Рассчитать стол")
-                    })
-                    
-                }
-                
             }
             .navigationTitle(model.order.title)
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    
+                    Button(action: {
+                        self.currentStatus = model.order.status
+                        
+                    }, label: {
+                        Text("Изменить статус заказа")
+                    })
+                    
+                    
+                }
+            })
+            .sheet(item: $currentStatus) { status in
+                OrderStatusListView(action: { newStatus in
+                    self.model.update(status: newStatus)
+                }, currentStatus: status)
+            }
             
         }
         
@@ -71,5 +79,5 @@ struct ClientOrderDetailView: View {
 }
 
 #Preview {
-    ClientOrderDetailView(model: ClientOrderDetailModel(order: Order.preview))
+    WaiterOrderDetailView(model: WaiterOrderDetailModel(order: Order.preview))
 }

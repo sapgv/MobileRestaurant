@@ -42,14 +42,14 @@ extension Desk {
     static var arrayPreview: [Desk] {
         
         [
-            Desk(name: "Стол 1", places: 2),
-            Desk(name: "Стол 2", places: 2),
-            Desk(name: "Стол 3", places: 3),
-            Desk(name: "Стол 4", places: 3),
-            Desk(name: "Стол 5", places: 4),
-            Desk(name: "Стол 6", places: 6),
-            Desk(name: "Стол 7", places: 8),
-            Desk(name: "Стол 8", places: 10),
+            Desk(name: "Стол 1", places: 12),
+            Desk(name: "Стол 2", places: 10),
+            Desk(name: "Стол 3", places: 8),
+            Desk(name: "Стол 4", places: 6),
+            Desk(name: "Стол 5", places: 6),
+            Desk(name: "Стол 6", places: 4),
+            Desk(name: "Стол 7", places: 2),
+            Desk(name: "Стол 8", places: 2),
         
         ]
         

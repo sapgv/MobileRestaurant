@@ -1,5 +1,5 @@
 //
-//  ClientOrderListRow.swift
+//  WaiterOrderListRow.swift
 //  MobileRestaurant
 //
 //  Created by Grigory Sapogov on 29.06.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClientOrderListRow: View {
+struct WaiterOrderListRow: View {
     
     var order: Order
     
@@ -16,7 +16,7 @@ struct ClientOrderListRow: View {
         VStack(alignment: .leading, spacing: 8) {
          
             HStack {
-                OrderStatusView(status: order.status)
+                
                 Spacer()
                 Text(order.date.formatted(date: .complete, time: .omitted))
                     .foregroundStyle(.secondary)
@@ -26,8 +26,8 @@ struct ClientOrderListRow: View {
                 Text(order.title)
                     .font(.title2)
                 Spacer()
-                Text("\(order.value) р")
-                    .font(.title)
+                OrderStatusView(status: order.status)
+                    .font(.title2)
                 
             }
             
@@ -38,5 +38,5 @@ struct ClientOrderListRow: View {
 }
 
 #Preview {
-    ClientOrderListRow(order: Order.preview)
+    WaiterOrderListRow(order: Order.preview)
 }
