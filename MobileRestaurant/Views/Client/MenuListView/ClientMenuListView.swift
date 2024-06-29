@@ -114,7 +114,7 @@ struct ClientMenuListView: View {
             })
             .sheet(isPresented: self.$showCreateOrder,
                    content: {
-                CreateOrderView()
+                CreateOrderView(showCreateOrder: self.$showCreateOrder)
                     .environmentObject(CreateOrderModel(orderType: self.model.orderType, desk: self.model.desk, items: self.model.items))
                     .environmentObject(model)
             })

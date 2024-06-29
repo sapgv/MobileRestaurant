@@ -13,6 +13,8 @@ struct CreateOrderPayView: View {
     
     @State private var showConfirmOrder: Bool = false
     
+    @Binding var showCreateOrder: Bool
+    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -34,7 +36,7 @@ struct CreateOrderPayView: View {
             }
             .navigationTitle("Оплата")
             .navigationDestination(isPresented: self.$showConfirmOrder) {
-                ConfirmCreateOrderView()
+                ConfirmCreateOrderView(showCreateOrder: $showCreateOrder)
             }
             
         }
@@ -44,5 +46,5 @@ struct CreateOrderPayView: View {
 }
 
 #Preview {
-    CreateOrderPayView()
+    CreateOrderPayView(showCreateOrder: .constant(false))
 }

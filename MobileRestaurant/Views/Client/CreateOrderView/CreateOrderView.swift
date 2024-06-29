@@ -13,6 +13,8 @@ struct CreateOrderView: View {
     
     @State private var showPayView: Bool = false
     
+    @Binding var showCreateOrder: Bool
+    
     var body: some View {
         
         NavigationStack {
@@ -43,7 +45,7 @@ struct CreateOrderView: View {
                 
             .navigationTitle("Новый заказ")
             .navigationDestination(isPresented: self.$showPayView) {
-                CreateOrderPayView()
+                CreateOrderPayView(showCreateOrder: $showCreateOrder)
             }
             
         }
@@ -53,6 +55,6 @@ struct CreateOrderView: View {
 
 #Preview {
     let model = CreateOrderModel(items: OrderItem.arrayPreview)
-    return CreateOrderView()
+    return CreateOrderView(showCreateOrder: .constant(false))
         .environmentObject(model)
 }

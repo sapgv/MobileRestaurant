@@ -15,6 +15,8 @@ struct ConfirmCreateOrderView: View {
     
     @EnvironmentObject var orderModel: ClientMenuOrderModel
     
+    @Binding var showCreateOrder: Bool
+    
     var body: some View {
         
         VStack(spacing: 0) {
@@ -74,7 +76,7 @@ struct ConfirmCreateOrderView: View {
             BottomActionView {
                 self.model.createOrder()
                 self.orderModel.reset()
-                self.dismiss()
+                self.showCreateOrder = false
                 
             } content: {
                 
@@ -99,6 +101,6 @@ struct ConfirmCreateOrderView: View {
 
 #Preview {
     let model = CreateOrderModel(orderType: .restaurant, desk: Desk.preview, items: OrderItem.arrayPreview)
-    return ConfirmCreateOrderView()
+    return ConfirmCreateOrderView(showCreateOrder: .constant(false))
         .environmentObject(model)
 }
