@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ProductUnit: Hashable {
+enum ProductUnit: Hashable, Codable {
     
     case item
     

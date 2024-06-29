@@ -38,6 +38,14 @@
 		10D82D952C2FCFC900A989CB /* Waiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D942C2FCFC900A989CB /* Waiter.swift */; };
 		10D82D982C2FD36800A989CB /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D972C2FD36800A989CB /* OrderModel.swift */; };
 		10D82D9A2C2FD3C700A989CB /* MenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D992C2FD3C700A989CB /* MenuModel.swift */; };
+		10D82D9C2C2FD5DE00A989CB /* Desk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D9B2C2FD5DE00A989CB /* Desk.swift */; };
+		10D82D9F2C2FD89600A989CB /* DeskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82D9E2C2FD89600A989CB /* DeskListView.swift */; };
+		10D82DA12C2FD8A600A989CB /* DeskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA02C2FD8A600A989CB /* DeskListModel.swift */; };
+		10D82DA32C2FDDA100A989CB /* DeskCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA22C2FDDA100A989CB /* DeskCircleView.swift */; };
+		10D82DA62C2FDF2200A989CB /* CreateOrderTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA52C2FDF2200A989CB /* CreateOrderTabView.swift */; };
+		10D82DA82C2FDF7A00A989CB /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA72C2FDF7A00A989CB /* CreateOrderView.swift */; };
+		10D82DAA2C2FDFC400A989CB /* CreateOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */; };
+		10D82DAD2C2FE98E00A989CB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D82DAC2C2FE98E00A989CB /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +81,14 @@
 		10D82D942C2FCFC900A989CB /* Waiter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waiter.swift; sourceTree = "<group>"; };
 		10D82D972C2FD36800A989CB /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		10D82D992C2FD3C700A989CB /* MenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModel.swift; sourceTree = "<group>"; };
+		10D82D9B2C2FD5DE00A989CB /* Desk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Desk.swift; sourceTree = "<group>"; };
+		10D82D9E2C2FD89600A989CB /* DeskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskListView.swift; sourceTree = "<group>"; };
+		10D82DA02C2FD8A600A989CB /* DeskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskListModel.swift; sourceTree = "<group>"; };
+		10D82DA22C2FDDA100A989CB /* DeskCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskCircleView.swift; sourceTree = "<group>"; };
+		10D82DA52C2FDF2200A989CB /* CreateOrderTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderTabView.swift; sourceTree = "<group>"; };
+		10D82DA72C2FDF7A00A989CB /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
+		10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderModel.swift; sourceTree = "<group>"; };
+		10D82DAC2C2FE98E00A989CB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +126,7 @@
 				10D82D962C2FD22300A989CB /* ViewModel */,
 				10C56C082C2F1D3F009A58B7 /* Views */,
 				10C56C032C2F1C83009A58B7 /* Model */,
+				10D82DAB2C2FE98000A989CB /* Storage */,
 				10C56BF92C2F1884009A58B7 /* Assets.xcassets */,
 				10C56BFB2C2F1884009A58B7 /* Preview Content */,
 			);
@@ -137,6 +154,7 @@
 				10C56C342C2F48A3009A58B7 /* OrderPayStatus.swift */,
 				10C56C412C2F5145009A58B7 /* OrderAccountStatus.swift */,
 				10D82D942C2FCFC900A989CB /* Waiter.swift */,
+				10D82D9B2C2FD5DE00A989CB /* Desk.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +167,7 @@
 				10C56C2B2C2F3584009A58B7 /* Product */,
 				10C56C242C2F344F009A58B7 /* Order */,
 				10C56C252C2F3456009A58B7 /* Menu */,
+				10D82D9D2C2FD88100A989CB /* DeskListView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +203,7 @@
 		10C56C242C2F344F009A58B7 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				10D82DA42C2FDF1000A989CB /* CreateOrderView */,
 				10C56C2F2C2F3F31009A58B7 /* OrderItemListView */,
 				10C56C162C2F2AAA009A58B7 /* OrdersListView */,
 				10C56C262C2F3465009A58B7 /* OrderView */,
@@ -250,6 +270,34 @@
 				10D82D992C2FD3C700A989CB /* MenuModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		10D82D9D2C2FD88100A989CB /* DeskListView */ = {
+			isa = PBXGroup;
+			children = (
+				10D82DA02C2FD8A600A989CB /* DeskListModel.swift */,
+				10D82D9E2C2FD89600A989CB /* DeskListView.swift */,
+				10D82DA22C2FDDA100A989CB /* DeskCircleView.swift */,
+			);
+			path = DeskListView;
+			sourceTree = "<group>";
+		};
+		10D82DA42C2FDF1000A989CB /* CreateOrderView */ = {
+			isa = PBXGroup;
+			children = (
+				10D82DA92C2FDFC400A989CB /* CreateOrderModel.swift */,
+				10D82DA52C2FDF2200A989CB /* CreateOrderTabView.swift */,
+				10D82DA72C2FDF7A00A989CB /* CreateOrderView.swift */,
+			);
+			path = CreateOrderView;
+			sourceTree = "<group>";
+		};
+		10D82DAB2C2FE98000A989CB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				10D82DAC2C2FE98E00A989CB /* Storage.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,12 +372,16 @@
 			files = (
 				10C56C212C2F30AF009A58B7 /* BottomOrderView.swift in Sources */,
 				10C56C282C2F349D009A58B7 /* OrderView.swift in Sources */,
+				10D82DA12C2FD8A600A989CB /* DeskListModel.swift in Sources */,
 				10C56C1E2C2F2B9D009A58B7 /* OrderListModel.swift in Sources */,
 				10C56C232C2F30E2009A58B7 /* BottomOrderViewModel.swift in Sources */,
 				10C56C152C2F24E1009A58B7 /* ProductUnit.swift in Sources */,
 				10C56BF82C2F1882009A58B7 /* MainView.swift in Sources */,
+				10D82DAD2C2FE98E00A989CB /* Storage.swift in Sources */,
+				10D82D9F2C2FD89600A989CB /* DeskListView.swift in Sources */,
 				10C56C2E2C2F359A009A58B7 /* ProductListView.swift in Sources */,
 				10C56C182C2F2AC5009A58B7 /* Order.swift in Sources */,
+				10D82DAA2C2FDFC400A989CB /* CreateOrderModel.swift in Sources */,
 				10C56C402C2F4EFA009A58B7 /* AccountOrderListView.swift in Sources */,
 				10C56C3A2C2F4C94009A58B7 /* AccountView.swift in Sources */,
 				10D82D952C2FCFC900A989CB /* Waiter.swift in Sources */,
@@ -339,15 +391,19 @@
 				10C56C1A2C2F2B11009A58B7 /* OrderItem.swift in Sources */,
 				10C56C0D2C2F1DAE009A58B7 /* MenuListModel.swift in Sources */,
 				10C56C312C2F3F3E009A58B7 /* OrderItemListView.swift in Sources */,
+				10D82DA62C2FDF2200A989CB /* CreateOrderTabView.swift in Sources */,
 				10C56C1C2C2F2B8E009A58B7 /* OrdersListView.swift in Sources */,
 				10C56C422C2F5145009A58B7 /* OrderAccountStatus.swift in Sources */,
+				10D82DA32C2FDDA100A989CB /* DeskCircleView.swift in Sources */,
 				10C56C112C2F2179009A58B7 /* Menu.swift in Sources */,
 				10C56C0F2C2F1E6A009A58B7 /* Coordinator.swift in Sources */,
 				10C56C352C2F48A3009A58B7 /* OrderPayStatus.swift in Sources */,
+				10D82DA82C2FDF7A00A989CB /* CreateOrderView.swift in Sources */,
 				10C56C372C2F4932009A58B7 /* OrderListPayView.swift in Sources */,
 				10C56C0A2C2F1D80009A58B7 /* MenuListView.swift in Sources */,
 				10C56BF62C2F1882009A58B7 /* MobileRestaurantApp.swift in Sources */,
 				10D82D982C2FD36800A989CB /* OrderModel.swift in Sources */,
+				10D82D9C2C2FD5DE00A989CB /* Desk.swift in Sources */,
 				10C56C052C2F1C9E009A58B7 /* Product.swift in Sources */,
 				10C56C132C2F219A009A58B7 /* ProductCategory.swift in Sources */,
 				10C56C2A2C2F34C1009A58B7 /* OrderViewModel.swift in Sources */,

@@ -6,13 +6,25 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
 final class OrderModel: ObservableObject {
     
     @Published private(set) var order: Order
     
-    init(order: Order = Order()) {
+    @Published var desk: Desk? {
+        didSet {
+            Storage.shared.desk = desk
+        }
+    }
+    
+    init(
+        order: Order = Order(),
+        desk: Desk? = Storage.shared.desk
+    ) {
         self.order = order
+        self.desk = desk
     }
     
     func add(product: Product) {

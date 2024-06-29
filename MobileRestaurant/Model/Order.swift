@@ -7,13 +7,15 @@
 
 import Foundation
 
-final class Order {
+final class Order: Codable {
     
     let id: UUID
     
     let date: Date
     
     let number: Int
+    
+    var desk: Desk? = nil
     
     private(set) var status: OrderStatus
     
@@ -31,6 +33,7 @@ final class Order {
         id: UUID = UUID(),
         number: Int = Int.random(in: 124567...567348),
         date: Date = Date(),
+        desk: Desk? = nil,
         status: OrderStatus = .new,
         payStatus: OrderPayStatus = .needPay,
         accountStatus: OrderAccountStatus = .default,
@@ -39,6 +42,7 @@ final class Order {
         self.id = id
         self.number = number
         self.date = date
+        self.desk = desk
         self.status = status
         self.payStatus = payStatus
         self.accountStatus = accountStatus

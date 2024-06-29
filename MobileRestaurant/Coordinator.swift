@@ -17,6 +17,7 @@ extension Coordinator {
     
     enum MenuList: Hashable {
         case product(Product)
+        case selectDesk
     }
     
 }

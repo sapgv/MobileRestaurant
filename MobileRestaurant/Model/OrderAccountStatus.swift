@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum OrderAccountStatus: String {
+enum OrderAccountStatus: String, Codable {
     
     case `default` = "Не выгружен"
     

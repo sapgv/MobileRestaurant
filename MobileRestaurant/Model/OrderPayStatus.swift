@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum OrderPayStatus: String {
+enum OrderPayStatus: String, Codable {
     
     case paided = "Оплачен"
     

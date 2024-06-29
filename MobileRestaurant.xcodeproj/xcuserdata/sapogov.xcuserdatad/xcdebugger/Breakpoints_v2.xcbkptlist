@@ -7,38 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CDD18BA4-0C08-4DB6-954F-6AF57F8EF2D1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileRestaurant/Model/Order.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "add(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5D80ECE8-9036-4445-9AA8-BF1C2A661404"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MobileRestaurant/Model/Order.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "add(product:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "DCC9413B-769B-4F89-848C-A4EBE98F468A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -49,6 +17,22 @@
             startingLineNumber = "74"
             endingLineNumber = "74"
             landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2859F690-1147-41B1-81E2-903BBA1E87A2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MobileRestaurant/Storage/Storage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "desk"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

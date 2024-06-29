@@ -7,15 +7,7 @@
 
 import Foundation
 
-final class Product: Hashable {
-    
-    static func == (lhs: Product, rhs: Product) -> Bool {
-        lhs.name == rhs.name
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-    }
+final class Product: Hashable, Codable {
     
     let name: String
     
@@ -43,6 +35,18 @@ final class Product: Hashable {
         self.image = image
         self.netto = netto
         self.description = description
+    }
+    
+}
+
+extension Product {
+    
+    static func == (lhs: Product, rhs: Product) -> Bool {
+        lhs.name == rhs.name
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
     }
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class OrderItem {
+final class OrderItem: Codable {
  
     let product: Product
     

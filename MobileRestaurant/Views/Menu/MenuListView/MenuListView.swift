@@ -13,6 +13,10 @@ struct MenuListView: View {
     
     @EnvironmentObject var orderModel: OrderModel
     
+    @State private var showSelectDesk = false
+    
+    @State private var showCreateOrder = false
+    
     var body: some View {
         
         NavigationStack {
@@ -20,6 +24,28 @@ struct MenuListView: View {
             VStack(spacing: 0) {
                 
                 List {
+                    
+                    Section {
+                        
+                        Button(action: {
+                            
+                            showSelectDesk = true
+                            
+                        }, label: {
+                            if let desk = orderModel.desk {
+                                
+                                HStack {
+                                    DeskCircleView(name: desk.name)
+                                    Text("\(desk.places) мест")
+                                }
+                                
+                            }
+                            else {
+                                Text("Выбрать стол")
+                            }
+                        })
+                        
+                    }
                     
                     ForEach(model.list, id: \.name) { category in
                         
@@ -59,6 +85,7 @@ struct MenuListView: View {
                         itemCount: self.orderModel.order.items.count,
                         value: self.orderModel.order.value,
                         action: {
+                            self.showCreateOrder = true
                         }
                     )
                     
@@ -66,7 +93,15 @@ struct MenuListView: View {
                 
             }
             .navigationTitle("Меню")
-            
+            .sheet(isPresented: self.$showSelectDesk, content: {
+                DeskListView(selectedDesk: self.$orderModel.desk)
+            })
+//            .sheet(isPresented: self.$showCreateOrder, content: {
+//                CreateOrderTabView(model: CreateOrderModel(order: self.orderModel.order))
+//            })
+            .fullScreenCover(isPresented: $showCreateOrder, content: {
+                CreateOrderTabView(model: CreateOrderModel(order: self.orderModel.order))
+                    })
         }
         
     }
@@ -74,6 +109,7 @@ struct MenuListView: View {
 }
 
 #Preview {
-    MenuListView()
-        .environmentObject(OrderModel(order: Order.preview))
+    let model = OrderModel(order: Order.preview, desk: Desk.preview)
+    return MenuListView()
+        .environmentObject(model)
 }
