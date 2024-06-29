@@ -13,6 +13,10 @@ final class Desk: Hashable, Codable {
     
     let places: Int
     
+    var placeTitle: String {
+        "\(places) мест"
+    }
+    
     init(name: String, places: Int) {
         self.name = name
         self.places = places

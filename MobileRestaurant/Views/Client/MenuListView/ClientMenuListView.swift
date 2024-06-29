@@ -43,22 +43,52 @@ struct ClientMenuListView: View {
                             }
                             .pickerStyle(.segmented)
                             
-                            if model.orderType == .restaurant {
+                            if model.orderType == .restaurant, let desk = model.desk {
                                 
-                                HStack {
+                                HStack(alignment: .center) {
                                     
-                                    if let desk = model.desk {
-                                        Text(desk.name)
+                                    if let waiter = currentShiftModel.currentShift.data[desk] {
+                                        
+                                        VStack(alignment: .leading, spacing: 8) {
+                                            
+//                                            LabeledContent(desk.name, value: desk.placeTitle)
+                                            
+                                            HStack {
+                                                Text(desk.name)
+                                                Text(desk.placeTitle)
+                                                    .foregroundStyle(.secondary)
+                                            }
+                                            
+                                            HStack {
+                                                
+                                                Image(waiter.image)
+                                                    .resizable()
+                                                    .frame(width: 44, height: 44)
+                                                    .clipShape(Circle())
+                                                
+                                                VStack(alignment: .leading) {
+                                                    
+                                                    Text(waiter.name)
+                                                    Text("Официант")
+                                                        .foregroundStyle(.secondary)
+                                                    
+                                                }
+                                                
+                                                Spacer()
+                                                
+                                                Button(action: {
+                                                    showSelectDesk = true
+                                                }, label: {
+                                                    Image(systemName: "chair.lounge")
+                                                        .resizable()
+                                                        .frame(width: 22, height: 22)
+                                                })
+                                                
+                                            }
+                                            
+                                        }
+                                        
                                     }
-                                    
-                                    Spacer()
-                                    
-                                    Button(action: {
-                                        showSelectDesk = true
-                                    }, label: {
-                                        Text("Выбрать стол")
-                                    })
-                                    
                                     
                                 }
                                 .padding(4)
@@ -135,4 +165,5 @@ struct ClientMenuListView: View {
     let model = ClientMenuOrderModel(desk: Desk.preview)
     return ClientMenuListView()
         .environmentObject(model)
+        .environmentObject(CurrentShiftModel())
 }
